@@ -2,6 +2,7 @@ import Phaser from "phaser";
 import React from "react";
 import ReactDOM from "react-dom";
 import Login from "./components/Login.jsx";
+import Home from "./components/Home.jsx";
 import playGame from "./phaser/scene";
 
 //console.log(App);
@@ -17,6 +18,6 @@ import playGame from "./phaser/scene";
 // const game = new Phaser.Game(config);
 
 ReactDOM.render(
-  <Login />,
+  <Home />,
   document.getElementById("root") || document.createElement("div")
 );
