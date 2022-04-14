@@ -1,0 +1,262 @@
+.shipArea {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.SHIP {
+    width: 15vw;
+    height: 15vw;
+    position: fixed;
+    background-image: url("../assets/images/SHIP.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-animation: ship 100s linear infinite, SHIP 500s infinite;
+    -moz-animation: ship 100s linear infinite, SHIP 500s infinite;
+    -ms-animation: ship 100s linear infinite, SHIP 500s infinite;
+    -o-animation: ship 100s linear infinite, SHIP 500s infinite;
+    animation: ship 100s linear infinite, SHIP 500s infinite;
+}
+
+@keyframes ship {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+}
+
+@keyframes SHIP {
+    0% {
+        bottom: 90vh;
+        right: 10vw;
+    }
+    16.5% {
+        bottom: 25vh;
+        right: 76vw;
+    }
+    30% {
+        bottom: 10vh;
+        right: 50vw;
+    }
+    40.5% {
+        bottom: 25vh;
+        right: 10vw;
+    }
+    55% {
+        bottom: 90vh;
+        right: 65vw;
+    }
+    66.5% {
+        bottom: 50vh;
+        right: 76vw;
+    }
+    85% {
+        bottom: 20vh;
+        right: 25vw;
+    }
+    100% {
+        bottom: 90vh;
+        right: 10vw;
+    }
+}
+
+.gameHeader {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    font-size: 55px;
+    margin: 35px;
+}
+
+.playGame {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-size: 45px;
+    margin: 3vw;
+    cursor: pointer;
+    transition: font-size 50ms ease-in-out, transform 50ms ease-in-out;
+    animation: playGame 10s infinite ease-in-out;
+}
+
+.playGame:hover {
+    font-size: 48px;
+}
+
+.playGame:active {
+    transform: translateY(2px);
+}
+
+@keyframes playGame {
+    0% {
+        transform: translateY(0px);
+    }
+    30% {
+        transform: translateY(3px);
+    }
+    70% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.holderHolder {
+    width: 60%;
+    height: 50%;
+    margin-right: -200%;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 10px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transform: scale(0);
+    transition: transform 250ms ease-in-out, margin-right 250ms ease-in-out;
+}
+
+.confirmationHolder {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.confirmSignOut {
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+}
+
+.spacemanSad {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.stay {
+    width: fit-content;
+    height: 30px;
+    text-align: left;
+    font-size: 28px;
+    cursor: pointer;
+    color: #277496;
+    transition: font-size 100ms ease-in-out;
+}
+
+.stay:hover {
+    color: #3182a5;
+    font-size: 30px;
+}
+
+.stay:active {
+    transform: translateY(2px);
+}
+
+.signOutSad {
+    width: fit-content;
+    height: 30px;
+    text-align: right;
+    font-size: 28px;
+    cursor: pointer;
+    color: #B03636;
+    transition: font-size 100ms ease-in-out;
+}
+
+.signOutSad:hover {
+    color: #c44242;
+    font-size: 30px;
+}
+
+.signOutSad:active {
+    transform: translateY(2px);
+}
+
+
+
+
+
+
+
+.menuPanel {
+    width: 500px;
+    
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 0px 0px 10px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: left 1s ease-in-out;
+    transition-delay: 500ms;
+}
+
+.menuBTNHolder {
+    width: 80%;
+    max-height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.menuBTN {
+    width: 100%;
+    height: 35px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    transition: font-size 50ms ease-in-out, transform 50ms ease-in-out;
+}
+
+.menuBTN:active {
+    transform: translateY(2px);
+}
+
+.nav {
+    margin: 5vh 0;
+    font-size: 30px;
+    color: rgb(185, 185, 185);
+}
+
+.nav:hover {
+    font-size: 32px;
+    color: white;
+}
+
+.util {
+    color: rgb(126, 126, 126);
+    font-size: 18px;
+    margin: 3vh 0;
+}
+
+.util:hover {
+    font-size: 20px;
+    color: white;
+}

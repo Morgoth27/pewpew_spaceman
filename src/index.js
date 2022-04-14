@@ -1,22 +1,23 @@
 import Phaser from "phaser";
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App.jsx";
+import Login from "./components/Login.jsx";
+import Home from "./components/Home.jsx";
 import playGame from "./phaser/scene";
 
 //console.log(App);
 
-export const config = {
-  type: Phaser.AUTO,
-  parent: "phaser",
-  width: 800,
-  height: 600,
-  scene: playGame
-};
+// export const config = {
+//   type: Phaser.AUTO,
+//   parent: "phaser",
+//   width: window.innerWidth,
+//   height: window.innerHeight,
+//   // scene: playGame
+// };
 
-const game = new Phaser.Game(config);
+// const game = new Phaser.Game(config);
 
 ReactDOM.render(
-  <App />,
+  <Home />,
   document.getElementById("root") || document.createElement("div")
 );
