@@ -6,6 +6,8 @@ export default class App extends React.Component {
 		return (
 			<>
 
+				<div className="loginBG"></div>
+
 				<div className="createPanel" data-visble="true">
 					<h1 className="createHeader">Create Account</h1>
 

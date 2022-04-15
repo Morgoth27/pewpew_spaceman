@@ -5,6 +5,8 @@ export default class App extends React.Component {
 		return (
 			<>
 
+                <div className="homeBG"></div>
+
                 <div className="shipArea">
                     <div className="SHIP"></div>
 

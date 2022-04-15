@@ -6,6 +6,8 @@ export default class App extends React.Component {
 		return (
 			<>
 
+                <div className="bestiaryBG"></div>
+
 				<div className="topPanel">
                     <h1 className="bestiaryHeader">Bestiary</h1>
 
