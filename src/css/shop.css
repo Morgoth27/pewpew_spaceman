@@ -1,0 +1,137 @@
+.topPanel {
+    width: 100%;
+    
+    height: 20vh;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 0px 0px 10px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.shopHeader {
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    color: rgb(67, 160, 67);
+}
+
+.currencySection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.currencyH1 {
+    margin-right: 15px;
+}
+
+.shopPanelHolder {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.shipPanel {
+    width: 47.5%;
+    
+    height: 70vh;
+    background: rgba(0, 0, 0, 0.8);
+    /* position: fixed; */
+    /* left: 0; */
+    margin-top: 20vh;
+    box-shadow: 0px 0px 10px white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.stationPanel {
+    width: 47.5%;
+    
+    height: 70vh;
+    background: rgba(0, 0, 0, 0.8);
+    /* position: fixed; */
+    /* left: 0; */
+    margin-top: 20vh;
+    box-shadow: 0px 0px 10px white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.shipHeader {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.stationHeader {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.shopColumn {
+    width: 45%;
+    height: 80%;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 5px white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+.shipUpgrade {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    margin-top: 15px;
+}
+
+.upgradeSmallIcon {
+    background-color: aqua;
+    width: 25%;
+    aspect-ratio: 1;
+
+}
+
+.upgradeInfoSurround {
+    width: 75%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.upgradeInfo {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.upgradeName {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.upgradeBasicDesc {
+    font-size: 12px;
+    line-height: 1.5;
+}

@@ -1,0 +1,73 @@
+.bestiaryHeader {
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    color: #B03636;
+}
+
+.bestiaryMessage {
+    font-size: 20px;
+}
+
+.bestiaryPanelHolder {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bestiaryPanel {
+    width: 50%;
+    
+    height: 70vh;
+    background: rgba(0, 0, 0, 0.8);
+    /* position: fixed; */
+    /* left: 0; */
+    margin-top: 20vh;
+    box-shadow: 0px 0px 10px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+.allSpriteHolder {
+    width: fit-content;
+    height: fit-content;
+    /* margin: 15px; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.sprite {
+    width: 130px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spriteIcon {
+    width: 100px;
+    aspect-ratio: 1;
+    background-color: white;
+    transition: width 150ms ease-in-out;
+    animation: spriteLoad 1s ease-in-out;
+}
+
+.spriteIcon:hover {
+    width: 120px;
+}
+
+@keyframes spriteLoad {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100px;
+    }
+}

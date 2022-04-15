@@ -46,7 +46,7 @@ export default class App extends React.Component {
 					<h1 className="createHeader">Sign In</h1>
 
 					<div className="formHolder">
-						<form action="/api/users/register" method="post" class="userEntryForm" data-visible="true">
+						<form action="/api/users/login" method="post" class="userEntryForm" data-visible="true">
 							<div className="formSect usernameSection">
 								<label for="name" class="formHeader userNameHeader">Username:</label>
 								<input name="name" type="text" class="userName input clickable" required></input>
