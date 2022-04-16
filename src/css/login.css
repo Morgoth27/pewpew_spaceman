@@ -38,9 +38,6 @@
 body {
     /* background-color: black; */
     /* z-index: -10; */
-    background-image: url("../assets/images/Space.png");
-    background-position: left;
-    background-repeat: repeat;
     color: white;
     overflow: hidden;
     display: flex;
@@ -49,7 +46,17 @@ body {
     align-items: center;
 }
 
-
+.loginBG {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("../assets/images/Space_login.png");
+    background-position: center;
+    background-repeat: repeat;
+    z-index: -100;
+}
 
 
 .createPanel {

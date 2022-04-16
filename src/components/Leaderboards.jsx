@@ -5,6 +5,7 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<>
+                <div className="leaderboardBG"></div>
 
 				<div className="topPanel">
                     <h1 className="leaderboardHeader">Leaderboards</h1>

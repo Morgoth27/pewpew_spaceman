@@ -1,10 +1,11 @@
 import React from "react";
-
+// hello
 
 export default class App extends React.Component {
 	render() {
 		return (
 			<>
+                <div className="shopBG"></div>
 
 				<div className="topPanel">
                     <h1 className="shopHeader">Shop</h1>
