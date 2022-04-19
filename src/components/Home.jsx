@@ -6,8 +6,13 @@ export default class App extends React.Component {
 			<>
 
                 <div className="homeBG"></div>
+                <div className="homePlanet"></div>
 
                 <div className="shipArea">
+
+
+
+
                     <div className="SHIP"></div>
 
                     <div className="gameHeader">PewPew Spaceman</div>

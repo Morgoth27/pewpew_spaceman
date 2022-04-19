@@ -4,18 +4,35 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-image: url("../assets/images/Space_home.png");
+    background-image: url("../assets/images/starry_BG.png");
+    background-size: cover;
     background-position: center;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     z-index: -100;
 }
 
+.homePlanet {
+    width: 70vh;
+    aspect-ratio: 1;
+    position: fixed;
+    top: 15vh;
+    right: -10%;
+    background-image: url("../assets/images/Home_planet.png");
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -99;
+}
+
+
 .shipArea {
     position: fixed;
+    width: 100%;
     height: 100%;
     top: 0;
     right: 0;
-    left: 500px;
+    /* left: 500px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,11 +116,13 @@
 }
 
 .playGame {
+    width: 100%;
+    text-align: center;
     position: fixed;
-    bottom: 0;
+    bottom: 50px;
     right: 0;
     font-size: 45px;
-    margin: 3vw;
+    /* margin: 0 25px; */
     cursor: pointer;
     transition: font-size 50ms ease-in-out, transform 50ms ease-in-out;
     animation: playGame 10s infinite ease-in-out;
@@ -224,8 +243,23 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    transition: left 1s ease-in-out;
-    transition-delay: 500ms;
+    transition: left 1s ease-in-out, box-shadow 5s ease-in-out;
+    transition-delay: 500ms, 0;
+
+}
+
+@keyframes slide {
+    0% {
+        left: -100%;
+    }
+    100% {
+
+    }
+}
+
+.menuPanel:hover {
+    box-shadow: inset 0px 0px 25px white;
+    transition: left 1s ease-in-out, box-shadow 5s ease-in-out;
 }
 
 .menuBTNHolder {

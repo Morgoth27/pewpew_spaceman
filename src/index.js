@@ -22,6 +22,8 @@ import GameSetUp from "./components/GameSetUp.jsx";
 // const game = new Phaser.Game(config);
 
 ReactDOM.render(
-  <GameSetUp />,
+
+  <Home />,
+
   document.getElementById("root") || document.createElement("div")
 );
