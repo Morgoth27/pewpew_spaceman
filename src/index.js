@@ -21,6 +21,6 @@ import playGame from "./phaser/scene";
 // const game = new Phaser.Game(config);
 
 ReactDOM.render(
-  <Bestiary />,
+  <Home />,
   document.getElementById("root") || document.createElement("div")
 );
