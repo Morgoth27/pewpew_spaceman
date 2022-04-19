@@ -1,4 +1,4 @@
-import Phaser from "phaser";
+//import Phaser from "phaser";
 import React from "react";
 import ReactDOM from "react-dom";
 import Login from "./components/Login.jsx";
@@ -6,7 +6,8 @@ import Home from "./components/Home.jsx";
 import Shop from "./components/Shop.jsx";
 import Bestiary from "./components/Bestiary.jsx";
 import Leaderboards from "./components/Leaderboards.jsx";
-import playGame from "./phaser/scene";
+import GameSetUp from "./components/GameSetUp.jsx";
+//import playGame from "./phaser/scene";
 
 //console.log(App);
 
@@ -21,6 +22,6 @@ import playGame from "./phaser/scene";
 // const game = new Phaser.Game(config);
 
 ReactDOM.render(
-  <Bestiary />,
+  <GameSetUp />,
   document.getElementById("root") || document.createElement("div")
 );
