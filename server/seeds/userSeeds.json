@@ -1,3 +1,4 @@
+
 [
     {
       "username": "R3dLeader",
@@ -5,7 +6,7 @@
       "password": "password123"
     },
     {
-      "username": "BladerLeader",
+      "username": "BladeLeader",
       "email": "AFox@bladesquadron.net",
       "password": "password123"
     },
@@ -18,5 +19,11 @@
       "username": "RogueLeada21",
       "email": "skywalker21@4rcbwithu.com",
       "password": "password123"
-    }
+    },
+    {
+      
+      "username": "Cat34534556",
+      "email": "Cat1234563@email.com",
+      "password": "password123"
+      }
   ]
