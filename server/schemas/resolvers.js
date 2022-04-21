@@ -6,10 +6,12 @@ const upgradeSeeds = require('../seeds/upgradeSeed')
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('upgrades');
+      return User.find().populate('upgrades')
+      // .sort({username: 1}).limit(n);
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('upgrades');
+      return User.findOne({ username }).populate('upgrades')
+      ;
     },
     // allUpgrades: async (parent, { username }) => {
     //   const params = username ? { username } : {};
@@ -26,6 +28,9 @@ const resolvers = {
         return User.findOne({ _id: context.user._id }).populate('upgrades');
       }
       throw new AuthenticationError('Please log in.');
+    },
+    leaderboard: async () => {
+      return Score.find().sort({score: -1, username: 1}).limit(10);
     },
 
   },
@@ -63,6 +68,15 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    submitScore: async (parent, { username, score }) => {
+      const user = await Score.create(
+        { username, score }
+        // { $addToSet: {
+        //   score: score
+        // }}
+        );
+        return "Score submitted."
     },
 
 

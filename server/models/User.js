@@ -23,11 +23,12 @@ const userSchema = new Schema({
     minlength: [8, "Password is too short."],
     maxlength: [14, "Password is too long."]
   },
-  score: {
-    type: Schema.Types.ObjectId,
-    required: false,
-    ref: 'Score'
-  },
+  // score: [{
+  //   type: Schema.Types.ObjectId,
+  //   required: true,
+  //   ref: 'Score',
+  //   minlength: [0]
+  // }],
   upgrades: [{
     type: Schema.Types.ObjectId,
     required: true,
