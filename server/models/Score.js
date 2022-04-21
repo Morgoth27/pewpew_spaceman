@@ -4,19 +4,19 @@ const dateFormat = (date) => {
 };
 
 const scoreSchema = new Schema({
-  scoreId: {
-    type: Schema.Types.ObjectId,
-    default: () => new Types.ObjectId(),
-    required: true,
-  },
+  // scoreId: {
+  //   type: Schema.Types.ObjectId,
+  //   default: () => new Types.ObjectId(),
+  //   required: true,
+  // },
   score: {
     type: Number,
     required: true,
-    ref: 'Score'
+    // ref: 'Score'
   },
-  username:  { 
-    type: String, 
-    required: true 
+  username: { 
+    type: String,
+    required: true,
   },
   lastUpdated: {
     type: Date,

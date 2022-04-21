@@ -8,13 +8,11 @@ const typeDefs = gql`
     email: String
     password: String
     upgrades: [Upgrade]
-    score: [Score]
   }
   type Score {
     _id: ID
-    newScore: Int
-    userScore: [User]
-    createdAt: String
+    username: String!
+    score: Int!
   }
   type Upgrade {
     _id: ID
@@ -22,6 +20,10 @@ const typeDefs = gql`
     userAcquired: Boolean
     upgradeUser: [User]
     upgradeDescription: String
+  }
+  type Leaderboard {
+    username: String!
+    score: Int!
   }
   type Auth {
     token: ID!
@@ -33,12 +35,13 @@ const typeDefs = gql`
     me: User
     userUpgrades(username: String, upgrades: String): User
     allUpgrades(upgradeName: String): [Upgrade]
+    leaderboard: [Score]
   }
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-   
-    addScore(userId: ID, newScore: Int): Score
+    removeUser(userId: ID!): User
+    submitScore(username: String!, score: Int!): String
   }
 `;
 
