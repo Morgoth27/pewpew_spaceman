@@ -1,0 +1,87 @@
+.GOWindow {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    transition: bottom 1s ease-in-out, background 5s ease-in-out;
+    transition-delay: 0, 1s;
+    z-index: 10001;
+}
+
+.gameOver {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+    width: min(90%, 800px);
+    height: 60%;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 10px white;
+}
+
+.gameOverHeader {
+    width: 100%;
+    height: fit-content;
+    font-size: 30px;
+    text-align: center;
+    color: rgb(192, 39, 39);
+}
+
+.scoreHolder {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.submitScoreForm {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 25px;
+}
+
+.userScoreName {
+    width: 35%;
+}
+
+#submitScore {
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    height: fit-content;
+    margin-top: 5vh;
+    background: none;
+    border: none;
+    color: rgb(35, 139, 236);
+    cursor: pointer;
+}
+
+.retryOrHome {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.returnHome {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.retryGame {
+    font-size: 25px;
+    cursor: pointer;
+}

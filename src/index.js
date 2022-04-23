@@ -23,7 +23,7 @@ import GameSetUp from "./components/GameSetUp.jsx";
 
 ReactDOM.render(
 
-  <Leaderboards />,
+  <GameSetUp />,
 
   document.getElementById("root") || document.createElement("div")
 );
