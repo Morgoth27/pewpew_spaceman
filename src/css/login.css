@@ -36,7 +36,7 @@
 }
 
 body {
-    /* background-color: black; */
+    background-color: black;
     /* z-index: -10; */
     color: white;
     overflow: hidden;
