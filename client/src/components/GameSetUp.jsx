@@ -20,7 +20,7 @@ export default class App extends React.Component {
 		return (
 			<>
                 
-                <script src="../assets/engine/phaser.min.js"></script>
+                
 
                 <div id="Game"></div>
 
