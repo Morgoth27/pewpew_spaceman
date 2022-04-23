@@ -1236,7 +1236,7 @@ class Main extends Phaser.Scene {
     // If player = ded, function = mock
     var playerHealthText = this.playerHealthText;
     const gameOver = document.querySelector('.GOWindow');
-    if (playerDATA.health === 0) {
+    if (playerDATA.health <= -25) {
       console.log('you died lol');
       playerHealthText.text = "Ship Health: ded";
       this.world.destroyBody(player);
