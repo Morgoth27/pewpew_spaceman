@@ -24,11 +24,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
 }
 
 .leaderPanel {
-    width: 30%;
+    width: max(550px, 35%);
     aspect-ratio: .85;
     background: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(4px);
@@ -47,10 +47,39 @@
     text-align: center;
     height: 10%;
     font-size: 20px;
-    margin-top: 20px;
+    /* text-decoration: underline; */
+    border-bottom: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .scoringSection {
     width: 70%;
     height: 70%;
+}
+
+@media screen and (max-width: 600px) {
+    .leaderboardPanelHolder {
+        width: 95vw;
+        height: 70vh;
+        margin-top: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .leaderPanel {
+        width: 95%;
+        aspect-ratio: .85;
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(4px);
+        box-shadow: 0px 0px 10px white;
+        margin: 3vw;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        cursor: pointer;
+    }
 }
