@@ -15,7 +15,7 @@ import { Vec2, Math,  } from "planck-js";
 
 // Imported Images
 import far_BG from "../assets/images/far_BG.jpg"
-import stars from "../assets/images/stars.PNG";
+import stars from "../assets/images/stars.png";
 import planet from "../assets/images/planets/PLANET.png";
 import moon from "../assets/images/planets/MOON.png";
 import dust_far from "../assets/images/dust_far.png";
