@@ -1,54 +1,60 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default class App extends React.Component {
-	render() {
-		return (
-			<>
+  render() {
+    return (
+      <>
+        <div className="homeBG"></div>
+        <div className="homePlanet"></div>
 
-                <div className="homeBG"></div>
-                <div className="homePlanet"></div>
+        <div className="shipArea">
+          <div className="SHIP"></div>
 
-                <div className="shipArea">
+          <div className="gameHeader">PewPew Spaceman</div>
 
+          <div className="holderHolder">
+            <div className="confirmationHolder">
+              <h1 className="confirmSignOut">
+                Are you sure you want to sign out?
+              </h1>
 
+              <h2 className="spacemanSad">Spaceman will miss you!</h2>
 
+              <div className="stay clickable">Stay</div>
+              <div className="signOutSad clickable">Sign Out</div>
+            </div>
+          </div>
 
-                    <div className="SHIP"></div>
+          <div className="playGame clickable">
+            <Link to={`/gamesetup`}>Play Game</Link>
+          </div>
+        </div>
 
-                    <div className="gameHeader">PewPew Spaceman</div>
+        <div className="menuPanel" data-visble="true">
+          <ul className="menuBTNHolder">
+            <li className="menuBTN nav shop clickable">
+              <Link to={`/shop`}>Shop</Link>
+            </li>
 
-                    <div className="holderHolder">
-                        <div className="confirmationHolder">
-                            <h1 className="confirmSignOut">Are you sure you want to sign out?</h1>
+            <li className="menuBTN nav bestiary clickable">
+              <Link to={`/bestiary`}>Bestiary</Link>
+            </li>
 
-                            <h2 className="spacemanSad">Spaceman will miss you!</h2>
+            <li className="menuBTN nav leaderboards clickable">
+              <Link to={`/leaderboards`}>Leaderboards</Link>
+            </li>
 
-                            <div className="stay clickable">Stay</div>
-                            <div className="signOutSad clickable">Sign Out</div>
-                        </div>
-                    </div>
+            <li className="menuBTN util options clickable">
+              <Link to={`/`}>Options</Link>
+            </li>
 
-                    <div className="playGame clickable">Play Game</div>
-                </div>
-
-				<div className="menuPanel" data-visble="true">
-                    <ul className="menuBTNHolder">
-                        <li className="menuBTN nav shop clickable">Shop</li>
-
-                        <li className="menuBTN nav bestiary clickable">Bestiary</li>
-
-                        <li className="menuBTN nav leaderboards clickable">Leaderboards</li>
-
-                        <li className="menuBTN util options clickable">Options</li>
-
-                        <li className="menuBTN util signOut clickable">Sign Out</li>
- 
-                    </ul>
-				</div>
-
-
-
-			</>
-		);
-	}
+            <li className="menuBTN util signOut clickable">
+              <Link to={`/`}>Sign Out</Link>
+            </li>
+          </ul>
+        </div>
+      </>
+    );
+  }
 }
