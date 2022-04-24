@@ -1,12 +1,14 @@
 //import Phaser from "phaser";
 import React from "react";
 import ReactDOM from "react-dom";
-import Login from "./components/Login.jsx";
-import Home from "./components/Home.jsx";
-import Shop from "./components/Shop.jsx";
-import Bestiary from "./components/Bestiary.jsx";
-import Leaderboards from "./components/Leaderboards.jsx";
-import GameSetUp from "./components/GameSetUp.jsx";
+import App from './App';
+import './css/reset.css';
+import './css/bestiary.css';
+import './css/leaderboards.css';
+import './css/home.css';
+import './css/login.css';
+import './css/shop.css';
+
 //import playGame from "./phaser/scene";
 
 //console.log(App);
@@ -21,9 +23,18 @@ import GameSetUp from "./components/GameSetUp.jsx";
 
 // const game = new Phaser.Game(config);
 
+// ReactDOM.render(
+
+//   <GameSetUp />,
+
+//   document.getElementById("root") || document.createElement("div")
+// );
+
+//
+
 ReactDOM.render(
-
-  <GameSetUp />,
-
-  document.getElementById("root") || document.createElement("div")
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
