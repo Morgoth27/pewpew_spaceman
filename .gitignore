@@ -8,6 +8,7 @@ Thumbs.db
 *.suo
 *.sublime-project
 *.sublime-workspace
+.designDoc.md
 
 # Vendors
 node_modules/
