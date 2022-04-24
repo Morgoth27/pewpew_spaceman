@@ -1,5 +1,38 @@
 import React from "react";
 
+const CREATEPanel = document.querySelector('.createPanel');
+const LOGINPanel = document.querySelector('.loginPanel');
+
+const swapLOG = document.querySelector('.swapLogBTN');
+const swapCREATE = document.querySelector('.swapCreateBTN');
+
+if (swapLOG) {
+	swapLOG.addEventListener('click', () => {
+    var createVIS = CREATEPanel.getAttribute('data-visible');
+		if (createVIS === "true") {
+			CREATEPanel.setAttribute('data-visible', false);
+			LOGINPanel.setAttribute('data-visible', true);
+		} else {
+			CREATEPanel.setAttribute('data-visible', true);
+			LOGINPanel.setAttribute('data-visible', false);
+		}
+	})
+}
+
+if (swapCREATE) {
+	swapCREATE.addEventListener('click', () => {
+		var loginVIS = LOGINPanel.getAttribute('data-visible');
+		if (loginVIS === "true") {
+			CREATEPanel.setAttribute('data-visible', true);
+			LOGINPanel.setAttribute('data-visible', false);
+		} else {
+			CREATEPanel.setAttribute('data-visible', false);
+			LOGINPanel.setAttribute('data-visible', true);
+		}
+	})
+}
+
+
 export default class App extends React.Component {
   render() {
     return (
@@ -13,46 +46,46 @@ export default class App extends React.Component {
             <form
               action="/api/users/register"
               method="post"
-              class="userEntryForm"
+              className="userEntryForm"
               data-visible="true"
             >
               <div className="formSect usernameSection">
-                <label for="name" class="formHeader userNameHeader">
+                <label htmlFor="name" className="formHeader userNameHeader">
                   Username:
                 </label>
                 <input
                   name="name"
                   type="text"
-                  class="userName input clickable"
+                  className="userName input clickable"
                   required
                 ></input>
               </div>
 
               <div className="formSect emailSection">
-                <label for="email" class="formHeader userEmailHeader">
+                <label htmlFor="email" className="formHeader userEmailHeader">
                   Email:
                 </label>
                 <input
                   name="email"
                   type="text"
-                  class="userEmail input clickable"
+                  className="userEmail input clickable"
                   required
                 ></input>
               </div>
 
               <div className="formSect passwordSection">
-                <label for="password" class="formHeader userPasswordHeader">
+                <label htmlFor="password" className="formHeader userPasswordHeader">
                   Password:
                 </label>
                 <input
                   name="password"
                   type="password"
-                  class="userPassword input clickable"
+                  className="userPassword input clickable"
                   required
                 ></input>
               </div>
 
-              <button type="submit" className="clickable" id="submitLogin">
+              <button type="submit" className="clickable" id="signupBtn">
                 Submit
               </button>
             </form>
@@ -72,34 +105,34 @@ export default class App extends React.Component {
             <form
               action="/api/users/login"
               method="post"
-              class="userEntryForm"
+              className="userEntryForm"
               data-visible="true"
             >
               <div className="formSect usernameSection">
-                <label for="name" class="formHeader userNameHeader">
+                <label htmlFor="name" className="formHeader userNameHeader">
                   Username:
                 </label>
                 <input
                   name="name"
                   type="text"
-                  class="userName input clickable"
+                  className="userName input clickable"
                   required
                 ></input>
               </div>
 
               <div className="formSect passwordSection">
-                <label for="password" class="formHeader userPasswordHeader">
+                <label htmlFor="password" className="formHeader userPasswordHeader">
                   Password:
                 </label>
                 <input
                   name="password"
                   type="password"
-                  class="userPassword input clickable"
+                  className="userPassword input clickable"
                   required
                 ></input>
               </div>
 
-              <button type="submit" className="clickable" id="submitLogin">
+              <button type="submit" className="clickable" id="loginBtn">
                 Submit
               </button>
             </form>
