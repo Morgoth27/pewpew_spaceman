@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const secret = "Pancakes1234";
-//Change secret to environment variable
+const secret = process.env.AUTH_SECRET
 
 const expiration = '2h';
 
