@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 // import playGame from "../assets/scenes/temp"
 
 
-
-
 import Phaser from "phaser";
 import Planck, { Circle, DistanceProxy, World } from "planck-js";
 import { Vec2, Math,  } from "planck-js";
@@ -104,7 +102,7 @@ var SCORE = 0;
 
 // Station and Ship stats
 var SHIP = 2;
-var SHIP_HEALTH = 500;
+var SHIP_HEALTH = 200;
 var STATION_HEALTH = 2000;
 var STATION_SIZE = 25;
 var IMMUNITY_FRAMES = 500;
@@ -1015,6 +1013,7 @@ class Main extends Phaser.Scene {
     }
     // console.log(x)
     // console.log(y)
+    var healthVar = Math.round(Math.random() * 100);
 
     if (rarityDecider < 10) {
       // console.log('thats a 10% chance')
@@ -1022,8 +1021,8 @@ class Main extends Phaser.Scene {
       this.spaceUrchin.play("space_urchin_anim", true);
       this.spaceUrchin.name = "Space Urchin";
       this.spaceUrchin.type = "Enemy";
-      this.spaceUrchin.maxHealth = 100;
-      this.spaceUrchin.health = 100;
+      this.spaceUrchin.maxHealth = 100 + healthVar;
+      this.spaceUrchin.health = 100 + healthVar;
       this.spaceUrchin.touching = false;
       this.spaceUrchinBody = this.world.createBody()
       this.spaceUrchinBody.setDynamic();
@@ -1044,8 +1043,8 @@ class Main extends Phaser.Scene {
       steelStingray.play("steel_stingray_anim", true);
       steelStingray.name = "Space Urchin";
       steelStingray.type = "Enemy";
-      steelStingray.maxHealth = 150;
-      steelStingray.health = 150;
+      steelStingray.maxHealth = 150 + healthVar;
+      steelStingray.health = 150 + healthVar;
       steelStingray.touching = false;
       steelStingray.damage = 50;
       var steelStingrayBody = this.world.createBody()
@@ -1192,7 +1191,8 @@ class Main extends Phaser.Scene {
       var bigx = bigUrchin.getPosition().x;
       var bigy = bigUrchin.getPosition().y;
       bigUrchin.setAngle(Phaser.Math.Angle.Between(0, 0, (bigx), (bigy)) + Math.PI / 2);
-      var attackForce = -1, angle = Phaser.Math.Angle.Between(0, 0, (bigx), (bigy)) + Math.PI / 2; 
+      let speedVar = Math.random() * 3;
+      var attackForce = -speedVar, angle = Phaser.Math.Angle.Between(0, 0, (bigx), (bigy)) + Math.PI / 2; 
       // console.log(attackForce);
       // console.log(spaceUrchinBody.getAngle())
       bigUrchin.setLinearVelocity(bigUrchin.getWorldVector(Vec2(0, attackForce)));
@@ -1207,8 +1207,9 @@ class Main extends Phaser.Scene {
       // var urchinF = urchin.getWorldVector(Vec2(0.0, .25));
       // var urchinP = urchin.getWorldPoint(Vec2(0.0, .25));
       // ray.setLinearVelocity(ray.getWorldVector(Vec2(0, speed, true)));
-      var rayf = ray.getWorldVector(Vec2(0.0, -0.00595));
-      var rayp = ray.getWorldPoint(Vec2(0.0, -0.00595));
+      let speedVar = Math.random() * .02;
+      var rayf = ray.getWorldVector(Vec2(0.0, -speedVar));
+      var rayp = ray.getWorldPoint(Vec2(0.0, -speedVar));
       ray.applyLinearImpulse(rayf, rayp, true);
     }
 
@@ -1220,13 +1221,14 @@ class Main extends Phaser.Scene {
 
 
     // Setting up damage being applied to the STATION and PLAYER
+    var damageVar = Math.round(Math.random() * 30)
     if (stationDATA.beingHit === true && ableToBeHit) {
       stationDATA.health = stationDATA.health - 10;
 
       nextHitTime = globalTime + stationDATA.IFrames;
     }
     if (playerDATA.beingHit === true && ableToBeHit) {
-      playerDATA.health = playerDATA.health - 25;
+      playerDATA.health = playerDATA.health - 20 - damageVar;
 
       nextHitTime = globalTime + playerDATA.IFrames;
     }
@@ -1236,13 +1238,16 @@ class Main extends Phaser.Scene {
     // If player = ded, function = mock
     var playerHealthText = this.playerHealthText;
     const gameOver = document.querySelector('.GOWindow');
-    if (playerDATA.health <= -25) {
+    if (playerDATA.health <= 0) {
+      const scoreEl = document.querySelector('.playerScore');
       console.log('you died lol');
       playerHealthText.text = "Ship Health: ded";
       this.world.destroyBody(player);
       playerDATA.destroy();
       emergencySound.volume = .5;
       emergencySound.play();
+      // scoreEl.textContent = "test";
+      console.log(scoreEl);
       gameOver.style.bottom = "0%";
       gameOver.style.background = "rgba(14, 0, 0, 0.8)";
     } else {
@@ -1615,7 +1620,10 @@ config.scene = Main;
 
 
 
-
+function updateScore() {
+  SCORE = SCORE;
+  return SCORE;
+}
 
 
 
@@ -1641,7 +1649,7 @@ export default class App extends React.Component {
                     <div className="gameOverHeader">Game Over</div>
                     <div className="scoreHolder">
                       <div className="score">Score:</div>
-                      <div className="playerScore">{SCORE}</div>
+                      <div className="playerScore">0</div>
                     </div>
                     <form action="" method="post" className="submitScoreForm" data-visible="true">
                       <button type="submit" className="clickable" id="submitScore">Submit Score</button>
