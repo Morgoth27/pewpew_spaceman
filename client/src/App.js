@@ -1,7 +1,14 @@
 
 import React, {useState} from "react";
 
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+// import {
+//   ApolloClient,
+//   InMemoryCache,
+//   ApolloProvider,
+//   useQuery,
+//   gql
+// } from "@apollo/client";
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from "./components/Login.jsx";
 import Home from "./components/Home.jsx";
@@ -10,18 +17,29 @@ import Bestiary from "./components/Bestiary.jsx";
 import Leaderboards from "./components/Leaderboards.jsx";
 import GameSetUp from "./components/GameSetUp.jsx";
 
-const client = new ApolloClient({
-    uri: '/graphql',
-    cache: new InMemoryCache(),
-});
+// const client = new ApolloClient({
+//     uri: 'https://48p1r2roz4.sse.codesandbox.io',
+//     cache: new InMemoryCache(),
+//   });
+
+// const client = ...
+
+// client
+//   .query({
+//     query: gql`
+//       query GetRates {
+//         rates(currency: "USD") {
+//           currency
+//         }
+//       }
+//     `
+//   })
+//   .then(result => console.log(result));
 
 function App() {
 
-
-  
-
    return (
-    <ApolloProvider client={client}>
+    <>
         {/* Wrap page elements in Router component to keep track of location state */}
         <Router>
           <div className="flex-column justify-flex-start min-100-vh">
@@ -61,7 +79,7 @@ function App() {
             {/* <Footer /> */}
           </div>
         </Router>
-      </ApolloProvider> 
+      </> 
     );
 
 }

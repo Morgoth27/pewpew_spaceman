@@ -114,28 +114,33 @@ canvas {
 
 .gameHeader {
     width: 100%;
-    position: fixed;
-    top: 0;
     text-align: center;
-    font-size: 55px;
-    margin: 35px;
+    /* position: fixed; */
+    /* top: 50px; */
+    font-size: min(55px, 6vw);
+    /* margin-left: 500px; */
+    z-index: 1000;
+    padding-bottom: 15px;
+    border-bottom: 3px dashed rgb(167, 167, 167);
 }
 
 .playGame {
     width: 100%;
     text-align: center;
-    position: fixed;
-    bottom: 50px;
-    right: 0;
-    font-size: 45px;
-    /* margin: 0 25px; */
+    /* position: fixed; */
+    /* bottom: 50px; */
+    font-size: min(45px, 5vw);
+    /* margin-left: 500px; */
     cursor: pointer;
     transition: font-size 50ms ease-in-out, transform 50ms ease-in-out;
     animation: playGame 10s infinite ease-in-out;
+    z-index: 1000;
+    padding-top: 15px;
+    border-top: 3px dashed rgb(167, 167, 167);
 }
 
 .playGame:hover {
-    font-size: 48px;
+    font-size: min(48px, 5.5vw);
 }
 
 .playGame:active {
@@ -265,7 +270,6 @@ canvas {
 
 .menuPanel:hover {
     box-shadow: inset 0px 0px 25px white;
-    transition: left 1s ease-in-out, box-shadow 5s ease-in-out;
 }
 
 .menuBTNHolder {
@@ -293,12 +297,12 @@ canvas {
 
 .nav {
     margin: 5vh 0;
-    font-size: 30px;
+    font-size: min(4vw, 30px);
     color: rgb(185, 185, 185);
 }
 
 .nav:hover {
-    font-size: 32px;
+    font-size: min(32px, 4.5vw);
     color: white;
 }
 
@@ -313,27 +317,6 @@ canvas {
     color: white;
 }
 
-@media screen and (max-width: 1300px) {
-    .gameHeader {
-        width: 60%;
-        position: relative;
-        top: 0;
-        right: 0;
-        text-align: center;
-        font-size: 55px;
-        margin: 35px;
-    }
-    
-    .playGame {
-        width: 60%;
-        text-align: center;
-        position: fixed;
-        bottom: 50px;
-        right: 0;
-        font-size: 45px;
-        /* margin: 0 25px; */
-        cursor: pointer;
-        transition: font-size 50ms ease-in-out, transform 50ms ease-in-out;
-        animation: playGame 10s infinite ease-in-out;
-    }
+@media screen and (max-width: 1400px) {
+
 }

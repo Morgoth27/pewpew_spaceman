@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
+
+
+
+
 export default class App extends React.Component {
   render() {
     return (
@@ -11,7 +16,6 @@ export default class App extends React.Component {
         <div className="shipArea">
           <div className="SHIP"></div>
 
-          <div className="gameHeader">PewPew Spaceman</div>
 
           <div className="holderHolder">
             <div className="confirmationHolder">
@@ -26,12 +30,10 @@ export default class App extends React.Component {
             </div>
           </div>
 
-          <div className="playGame clickable">
-            <Link to={`/gamesetup`}>Play Game</Link>
-          </div>
         </div>
 
         <div className="menuPanel" data-visble="true">
+          <div className="gameHeader">PewPew Spaceman</div>
           <ul className="menuBTNHolder">
             <li className="menuBTN nav shop clickable">
               <Link to={`/shop`}>Shop</Link>
@@ -53,6 +55,9 @@ export default class App extends React.Component {
               Sign Out
             </li>
           </ul>
+          <div className="playGame clickable">
+            <Link to={`/gamesetup`}>Play Game</Link>
+          </div>
         </div>
       </>
     );
