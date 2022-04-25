@@ -19,8 +19,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
+  app.use(express.static(path.join(__dirname, '../client/dist')));
 }
+
+
+
+//console.log("server start")
+
 
 
 
@@ -31,7 +36,8 @@ const startApolloServer = async (typeDefs, resolvers) => {
   server.applyMiddleware({ app });
   
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+    //console.log("route attemtped")
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
   });
 
   db.once('open', () => {
