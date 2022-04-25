@@ -114,7 +114,7 @@ canvas {
 
 .gameHeader {
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     text-align: center;
     font-size: 55px;
@@ -311,4 +311,29 @@ canvas {
 .util:hover {
     font-size: 20px;
     color: white;
+}
+
+@media screen and (max-width: 1300px) {
+    .gameHeader {
+        width: 60%;
+        position: relative;
+        top: 0;
+        right: 0;
+        text-align: center;
+        font-size: 55px;
+        margin: 35px;
+    }
+    
+    .playGame {
+        width: 60%;
+        text-align: center;
+        position: fixed;
+        bottom: 50px;
+        right: 0;
+        font-size: 45px;
+        /* margin: 0 25px; */
+        cursor: pointer;
+        transition: font-size 50ms ease-in-out, transform 50ms ease-in-out;
+        animation: playGame 10s infinite ease-in-out;
+    }
 }

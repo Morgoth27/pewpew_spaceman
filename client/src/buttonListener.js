@@ -1,34 +1,34 @@
-const CREATEPanel = document.querySelector('.createPanel');
-const LOGINPanel = document.querySelector('.loginPanel');
+// const CREATEPanel = document.querySelector('.createPanel');
+// const LOGINPanel = document.querySelector('.loginPanel');
 
-const swapLOG = document.querySelector('.swapLogBTN');
-const swapCREATE = document.querySelector('.swapCreateBTN');
+// const swapLOG = document.querySelector('.swapLogBTN');
+// const swapCREATE = document.querySelector('.swapCreateBTN');
 
-if (swapLOG) {
-	swapLOG.addEventListener('click', () => {
-    var createVIS = CREATEPanel.getAttribute('data-visible');
-		if (createVIS === "true") {
-			CREATEPanel.setAttribute('data-visible', false);
-			LOGINPanel.setAttribute('data-visible', true);
-		} else {
-			CREATEPanel.setAttribute('data-visible', true);
-			LOGINPanel.setAttribute('data-visible', false);
-		}
-	})
-}
+// if (swapLOG) {
+// 	swapLOG.addEventListener('click', () => {
+//     var createVIS = CREATEPanel.getAttribute('data-visible');
+// 		if (createVIS === "true") {
+// 			CREATEPanel.setAttribute('data-visible', false);
+// 			LOGINPanel.setAttribute('data-visible', true);
+// 		} else {
+// 			CREATEPanel.setAttribute('data-visible', true);
+// 			LOGINPanel.setAttribute('data-visible', false);
+// 		}
+// 	})
+// }
 
-if (swapCREATE) {
-	swapCREATE.addEventListener('click', () => {
-		var loginVIS = LOGINPanel.getAttribute('data-visible');
-		if (loginVIS === "true") {
-			CREATEPanel.setAttribute('data-visible', true);
-			LOGINPanel.setAttribute('data-visible', false);
-		} else {
-			CREATEPanel.setAttribute('data-visible', false);
-			LOGINPanel.setAttribute('data-visible', true);
-		}
-	})
-}
+// if (swapCREATE) {
+// 	swapCREATE.addEventListener('click', () => {
+// 		var loginVIS = LOGINPanel.getAttribute('data-visible');
+// 		if (loginVIS === "true") {
+// 			CREATEPanel.setAttribute('data-visible', true);
+// 			LOGINPanel.setAttribute('data-visible', false);
+// 		} else {
+// 			CREATEPanel.setAttribute('data-visible', false);
+// 			LOGINPanel.setAttribute('data-visible', true);
+// 		}
+// 	})
+// }
 
 var clickableHoverSource = "src/assets/sound-effects/clickable-hover.wav";
 var clickableHover;
@@ -39,7 +39,7 @@ var clickableClick;
 const clickable = document.querySelectorAll('.clickable');
 
 if (clickable) {
-	for (i=0; i<clickable.length; i++) {
+	for (var i=0; i<clickable.length; i++) {
 		clickable[i].addEventListener('mouseover', () => {
 			clickableHover = new Audio(clickableHoverSource);
 			clickableHover.muted = false;
@@ -47,7 +47,7 @@ if (clickable) {
 			clickableHover.play();
 		})
 	}
-	for (i=0; i<clickable.length; i++) {
+	for (var i=0; i<clickable.length; i++) {
 		clickable[i].addEventListener('click', () => {
 			clickableClick = new Audio(clickableClickSource);
 			clickableClick.muted = false;
