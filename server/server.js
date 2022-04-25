@@ -18,16 +18,39 @@ const server = new ApolloServer({
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-if (process.env.NODE_ENV === 'production') {
+// if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/dist')));
-}
+// }
 
 
 
 //console.log("server start")
 
 
-
+  app.get('/', (req, res) => {
+    //console.log("route attemtped")
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+  });
+  app.get('/login', (req, res) => {
+    //console.log("route attemtped")
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+  });
+  app.get('/shop', (req, res) => {
+    //console.log("route attemtped")
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+  });
+  app.get('/bestiary', (req, res) => {
+    //console.log("route attemtped")
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+  });
+  app.get('/leaderboards', (req, res) => {
+    //console.log("route attemtped")
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+  });
+  app.get('/gamesetup', (req, res) => {
+    //console.log("route attemtped")
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+  });
 
 
 // Create a new instance of an Apollo server with the GraphQL schema
@@ -35,10 +58,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });
   
-  app.get('*', (req, res) => {
-    //console.log("route attemtped")
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-  });
+
 
   db.once('open', () => {
     app.listen(PORT, () => {
