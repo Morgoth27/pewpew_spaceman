@@ -13,7 +13,7 @@ import './css/game.css';
 
 ReactDOM.render(
 
-    <Leaderboards />,
+    <App />,
 
   document.getElementById('root')
 );
