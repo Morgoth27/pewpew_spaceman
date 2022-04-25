@@ -33,6 +33,34 @@ if (swapCREATE) {
 }
 
 
+var clickableHoverSource = "../assets/sound-effects/clickable-hover.wav";
+var clickableHover;
+
+var clickableClickSource = "../assets/sound-effects/inventory-bloop.mp3";
+var clickableClick;
+
+const clickable = document.querySelectorAll('.clickable');
+
+if (clickable) {
+	for (var i=0; i<clickable.length; i++) {
+		clickable[i].addEventListener('mouseover', () => {
+			clickableHover = new Audio(clickableHoverSource);
+			clickableHover.muted = false;
+			clickableHover.volume = .80;
+			clickableHover.play();
+		})
+	}
+	for (var i=0; i<clickable.length; i++) {
+		clickable[i].addEventListener('click', () => {
+			clickableClick = new Audio(clickableClickSource);
+			clickableClick.muted = false;
+			clickableClick.volume = .80;
+			clickableClick.play();
+		})
+	}
+}
+
+
 export default class App extends React.Component {
   render() {
     return (
@@ -85,7 +113,7 @@ export default class App extends React.Component {
                 ></input>
               </div>
 
-              <button type="submit" className="clickable" id="signupBtn">
+              <button type="submit" className="signupBtn clickable" id="signupBtn">
                 Submit
               </button>
             </form>
@@ -132,7 +160,7 @@ export default class App extends React.Component {
                 ></input>
               </div>
 
-              <button type="submit" className="clickable" id="loginBtn">
+              <button type="submit" className="loginBtn clickable" id="loginBtn">
                 Submit
               </button>
             </form>

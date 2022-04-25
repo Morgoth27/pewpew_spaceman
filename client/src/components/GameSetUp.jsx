@@ -1,6 +1,6 @@
-import React from "react";
-
-import Game from "../components/Game.jsx"
+import React, {useState} from "react";
+import Game from "./Game.jsx";
+import { Link } from "react-router-dom";
 
 // import playGame from "../assets/scenes/temp"
 
@@ -1620,11 +1620,20 @@ config.scene = Main;
 
 
 export default class App extends React.Component {
+  
   render() {
-    { window.game = new Phaser.Game(config) }
-		return (
-			<>
-                
+    {
+      const canvasCount = document.querySelectorAll('canvas');
+      if (canvasCount.length === 0) {
+        window.game = new Phaser.Game(config)
+      } else {
+        return;
+      }
+    }
+
+    {console.log("TESTING")}
+    return (
+      <>
                 <script src="../assets/engine/phaser.min.js"></script>
 
                 <div className="GOWindow">
@@ -1634,17 +1643,19 @@ export default class App extends React.Component {
                       <div className="score">Score:</div>
                       <div className="playerScore">{SCORE}</div>
                     </div>
-                    <form action="" method="post" class="submitScoreForm" data-visible="true">
+                    <form action="" method="post" className="submitScoreForm" data-visible="true">
                       <button type="submit" className="clickable" id="submitScore">Submit Score</button>
                     </form> 
                     <div className="retryOrHome">
-                      <div className="returnHome clickable">Home</div>
-                      <div className="retryGame clickable">Retry</div>
+                      <div className="returnHome clickable">
+                        <a href={`/`}>Return Home</a>
+                      </div>
+                      {/* <div className="retryGame clickable">
+                        <a href={window.location.href=window.location.href}>Retry</a>
+                      </div> */}
                     </div>
                   </div>
                 </div>
-
-                
 
                 <Game />
 
