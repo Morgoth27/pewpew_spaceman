@@ -1,5 +1,5 @@
 ::-webkit-scrollbar {
-    width: .5em;
+    width: 0em;
     height: 1rem;
 }
 
@@ -18,14 +18,14 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(230, 230, 230);
-    border: 1px solid #909090;
+    background: rgb(0, 0, 0);
+    border: 1px solid #000000;
     /* border-radius: 100vh; */
     cursor: pointer;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    box-shadow: inset 0px 0px 5px rgb(32, 32, 32);
+    box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
     cursor: pointer;
 }
 
@@ -33,6 +33,8 @@
     font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     user-select: none;
+    text-decoration: none;
+    color: white;
 }
 
 body {
@@ -181,7 +183,7 @@ body {
     font-size: 16px;
 }
 
-#submitLogin {
+.loginBtn, .signupBtn {
     font-size: 30px;
     text-align: center;
     width: 100%;

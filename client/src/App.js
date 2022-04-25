@@ -1,10 +1,10 @@
 
-import React from "react";
+import React, {useState} from "react";
 
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from "./components/Login";
-import Home from "./components/Home";
+import Login from "./components/Login.jsx";
+import Home from "./components/Home.jsx";
 import Shop from "./components/Shop.jsx";
 import Bestiary from "./components/Bestiary.jsx";
 import Leaderboards from "./components/Leaderboards.jsx";
@@ -13,9 +13,12 @@ import GameSetUp from "./components/GameSetUp.jsx";
 const client = new ApolloClient({
     uri: '/graphql',
     cache: new InMemoryCache(),
-  });
+});
 
 function App() {
+
+
+  
 
    return (
     <ApolloProvider client={client}>

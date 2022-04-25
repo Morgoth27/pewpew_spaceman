@@ -46,11 +46,11 @@ export default class App extends React.Component {
             </li>
 
             <li className="menuBTN util options clickable">
-              <Link to={`/`}>Options</Link>
+              Options
             </li>
 
             <li className="menuBTN util signOut clickable">
-              <Link to={`/`}>Sign Out</Link>
+              Sign Out
             </li>
           </ul>
         </div>
