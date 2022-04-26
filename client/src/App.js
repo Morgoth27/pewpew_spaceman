@@ -1,13 +1,15 @@
 
-import React, {useState} from "react";
+import React from "react";
 
-// import {
-//   ApolloClient,
-//   InMemoryCache,
-//   ApolloProvider,
-//   useQuery,
-//   gql
-// } from "@apollo/client";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  useQuery,
+  gql,
+  createHttpLink,
+} from "@apollo/client";
+import { setContext } from '@apollo/client/link/context';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from "./components/Login.jsx";
@@ -17,29 +19,53 @@ import Bestiary from "./components/Bestiary.jsx";
 import Leaderboards from "./components/Leaderboards.jsx";
 import GameSetUp from "./components/GameSetUp.jsx";
 
-// const client = new ApolloClient({
-//     uri: 'https://48p1r2roz4.sse.codesandbox.io',
-//     cache: new InMemoryCache(),
-//   });
 
-// const client = ...
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
 
-// client
-//   .query({
-//     query: gql`
-//       query GetRates {
-//         rates(currency: "USD") {
-//           currency
-//         }
-//       }
-//     `
-//   })
-//   .then(result => console.log(result));
+// Construct request middleware that will attach the JWT token to every request as an `authorization` header
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem('id_token');
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+
+
+
+const client = new ApolloClient({
+    link: authLink.concat(httpLink),
+    cache: new InMemoryCache(),
+  });
+
+
+
+
+
+client
+  .query({
+    query: gql`
+      query users {
+        User {
+        _id
+        username
+    }
+      }
+    `
+  })
+  .then(result => console.log(result));
 
 function App() {
 
    return (
-    <>
+    <ApolloProvider client={client}>
         {/* Wrap page elements in Router component to keep track of location state */}
         <Router>
           <div className="flex-column justify-flex-start min-100-vh">
@@ -79,7 +105,7 @@ function App() {
             {/* <Footer /> */}
           </div>
         </Router>
-      </> 
+      </ApolloProvider> 
     );
 
 }
