@@ -19,6 +19,7 @@
 
 .bestiaryMessage {
     font-size: 20px;
+    text-align: center;
 }
 
 .bestiaryPanelHolder {
@@ -66,7 +67,8 @@
 .spriteIcon {
     width: 100px;
     aspect-ratio: 1;
-    background-color: white;
+    background-color: rgb(10, 10, 10);
+    box-shadow: 0px 0px 10px white;
     transition: width 150ms ease-in-out;
     animation: spriteLoad 1s ease-in-out;
 }
@@ -81,5 +83,23 @@
     }
     to {
         width: 100px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .bestiaryPanel {
+        width: 85%;
+        
+        height: 70vh;
+        background: rgba(0, 0, 0, 0.8);
+        /* position: fixed; */
+        /* left: 0; */
+        margin-top: 20vh;
+        box-shadow: 0px 0px 10px white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        overflow-y: scroll;
     }
 }
