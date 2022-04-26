@@ -746,8 +746,10 @@ class Main extends Phaser.Scene {
     
     
     // Set any text or hud visuals we need here, since it's made last it will lay on top of everything else
-    this.playerHealthText = this.add.text(50, 0, '', { fontSize: '50px', color: '#C13636' }).setScrollFactor(0).setOrigin(0.5);
-    this.scoreText = this.add.text(window.innerWidth - 50, 0, '', { fontSize: '50px', color: '#C13636' }).setScrollFactor(0).setOrigin(0.5);
+    this.playerHealthText = this.add.text(window.innerWidth / 2, -50, '', { fontSize: '70px', color: '#FF0F00' }).setScrollFactor(0).setOrigin(0.5).setDepth(10000);
+    this.scoreText = this.add.text(window.innerWidth / 2, window.innerHeight + 50, '', { fontSize: '70px', color: '#24FF00' }).setScrollFactor(0).setOrigin(0.5).setDepth(10000);
+    this.movementText = this.add.text(50, window.innerHeight + 50, 'W, A, S, D to Move', { fontSize: '25px', color: '#FFF' }).setScrollFactor(0).setOrigin(0.5).setDepth(10000);
+    this.movementExtraText = this.add.text(50, window.innerHeight - 50, 'Shift to boost, left mouse button to shoot', { fontSize: '25px', color: '#FFF' }).setScrollFactor(0).setOrigin(0.5).setDepth(10000);
   }
 
 
@@ -1361,14 +1363,14 @@ class Main extends Phaser.Scene {
 
 
     // Setting up user input :'(
-    if (cursors.space.isDown) {
-      console.log(this.world.getBodyCount())
-      this.spawnEnemy()
-      console.log("Using ablility!")
+    // if (cursors.space.isDown) {
+    //   console.log(this.world.getBodyCount())
+    //   this.spawnEnemy()
+    //   console.log("Using ablility!")
 
-      const canvas = document.querySelector('canvas');
-      canvas.style.display = "none";
-    }
+    //   const canvas = document.querySelector('canvas');
+    //   canvas.style.display = "none";
+    // }
 
 
 
