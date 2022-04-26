@@ -15,5 +15,8 @@
   "devDependencies": {
     "concurrently": "^5.3.0",
     "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "node": "^17.7.2"
   }
 }
