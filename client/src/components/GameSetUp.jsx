@@ -1246,7 +1246,9 @@ class Main extends Phaser.Scene {
       playerDATA.destroy();
       emergencySound.volume = .5;
       emergencySound.play();
+      document.querySelector('.playerScore').innerHTML = " " + SCORE;
       // scoreEl.textContent = "test";
+      var finalSCORE = SCORE;
       console.log(scoreEl);
       gameOver.style.bottom = "0%";
       gameOver.style.background = "rgba(14, 0, 0, 0.8)";
@@ -1649,11 +1651,8 @@ export default class App extends React.Component {
                     <div className="gameOverHeader">Game Over</div>
                     <div className="scoreHolder">
                       <div className="score">Score:</div>
-                      <div className="playerScore">0</div>
+                      <div className="playerScore"></div>
                     </div>
-                    <form action="" method="post" className="submitScoreForm" data-visible="true">
-                      <button type="submit" className="clickable" id="submitScore">Submit Score</button>
-                    </form> 
                     <div className="retryOrHome">
                       <div className="returnHome clickable">
                         <a href={`/`}>Return Home</a>
