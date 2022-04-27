@@ -19,7 +19,10 @@ import Bestiary from "./components/Bestiary.jsx";
 import Leaderboards from "./components/Leaderboards.jsx";
 import GameSetUp from "./components/GameSetUp.jsx";
 
+import Authservice from './utils/auth';
+import { useNavigate } from "react-router-dom";
 
+console.log(Authservice.loggedIn())
 // const httpLink = createHttpLink({
 //   uri: '/graphql',
 // });
@@ -46,7 +49,7 @@ const authLink = setContext((_, { headers }) => {
 function App() {
 
 
-
+  // const navigate = useNavigate();
 
    return (
     
@@ -57,9 +60,11 @@ function App() {
             {/* <Header /> */}
             <div className="container">
               {/* Wrap Route elements in a Routes component */}
-              <Routes>
+                <Routes>
                 {/* Define routes using the Route component to render different page components at different paths */}
                 {/* Define a default route that will render the Home component */}
+              { Authservice.loggedIn() ? 
+                <>
                 <Route 
                   path="/" 
                   element={<Home />} 
@@ -85,7 +90,10 @@ function App() {
                   path="/gamesetup" 
                   element={<GameSetUp />} 
                 />
-              </Routes>
+                </>:<> {console.log(window.location)} {window.location.pathname === '/login' ? console.log('login') : window.location.assign('/login')} <Route path="/login" element={<Login />}/></>
+              }
+                </Routes>
+                
             </div>
             {/* <Footer /> */}
           </div>

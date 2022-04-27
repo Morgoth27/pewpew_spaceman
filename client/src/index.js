@@ -54,19 +54,19 @@ const client = new ApolloClient({
 
 
 
-client
-.query(
-{
-  query: gql`
-    query Query {
-      leaderboard {
-        username
-        score
-      }
-    }
-  `
-})
-.then(result => console.log(result));
+// client
+// .query(
+// {
+//   query: gql`
+//     query Query {
+//       leaderboard {
+//         username
+//         score
+//       }
+//     }
+//   `
+// })
+// .then(result => console.log(result));
 
 
 ReactDOM.render(
