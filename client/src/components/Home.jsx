@@ -17,6 +17,8 @@ export default class App extends React.Component {
           <div className="SHIP"></div>
 
 
+        </div>
+
           <div className="holderHolder">
             <div className="confirmationHolder">
               <h1 className="confirmSignOut">
@@ -29,8 +31,6 @@ export default class App extends React.Component {
               <div className="signOutSad clickable">Sign Out</div>
             </div>
           </div>
-
-        </div>
 
         <div className="menuPanel" data-visble="true">
           <div className="gameHeader">PewPew Spaceman</div>
