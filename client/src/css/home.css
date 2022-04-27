@@ -163,9 +163,11 @@ canvas {
 }
 
 .holderHolder {
-    width: 60%;
-    height: 50%;
-    margin-right: -200%;
+    width: min(550px, 95vw);
+    height: 250px;
+    z-index: 1000;
+    position: relative;
+    /* margin-right: -200%; */
     background: rgba(0, 0, 0, 0.8);
     box-shadow: 0px 0px 10px white;
     display: flex;
@@ -177,7 +179,7 @@ canvas {
 }
 
 .confirmationHolder {
-    width: 70%;
+    width: 85%;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -187,13 +189,13 @@ canvas {
 
 .confirmSignOut {
     width: 100%;
-    font-size: 30px;
+    font-size: 24px;
     text-align: center;
 }
 
 .spacemanSad {
     width: 100%;
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
 }
 
@@ -201,7 +203,7 @@ canvas {
     width: fit-content;
     height: 30px;
     text-align: left;
-    font-size: 28px;
+    font-size: 18px;
     cursor: pointer;
     color: #277496;
     transition: font-size 100ms ease-in-out;
@@ -209,7 +211,7 @@ canvas {
 
 .stay:hover {
     color: #3182a5;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .stay:active {
@@ -220,7 +222,7 @@ canvas {
     width: fit-content;
     height: 30px;
     text-align: right;
-    font-size: 28px;
+    font-size: 18px;
     cursor: pointer;
     color: #B03636;
     transition: font-size 100ms ease-in-out;
@@ -228,7 +230,7 @@ canvas {
 
 .signOutSad:hover {
     color: #c44242;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .signOutSad:active {
@@ -242,7 +244,7 @@ canvas {
 
 
 .menuPanel {
-    width: 500px;
+    width: min(500px, 100%);
     
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
