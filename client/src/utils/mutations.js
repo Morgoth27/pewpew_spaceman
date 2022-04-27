@@ -15,11 +15,12 @@ import { gql } from '@apollo/client';
 // }
 // `
 export const ADD_USER = gql`
-mutation Mutation($username: String!, $email: String!, $password: String!) {
+mutation createUser($username: String!, $email: String!, $password: String!) {
   addUser(username: $username, email: $email, password: $password) {
+    token
     user {
-      _id
-      username
+        _id
+        username
     }
   }
 }
@@ -27,11 +28,12 @@ mutation Mutation($username: String!, $email: String!, $password: String!) {
 //need to update it to say password, not score
 
 export const LOGIN = gql`
-mutation Mutation($email: String!, $password: String!) {
-  login(email: $email, password: $password) {
+mutation login($username: String!, $password: String!) {
+  login(username: $username, password: $password) {
+    token
     user {
-      username
-      _id
+        _id
+        username
     }
   }
 }
@@ -45,9 +47,6 @@ mutation removeUser($id: ID!) {
 
 export const SUBMIT_SCORE = gql`
 mutation submitScore($username: String!, $score: Int!) {
-    submitScore(username: $username, score: $score) {
-        username
-        score
-    }
+    submitScore(username: $username, score: $score)
 }
 `

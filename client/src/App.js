@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, {useState} from "react";
 
 import {
   ApolloClient,
@@ -45,6 +45,9 @@ const authLink = setContext((_, { headers }) => {
 
 function App() {
 
+
+
+
    return (
     
         
@@ -68,7 +71,7 @@ function App() {
                 />
                 <Route 
                   path="/shop" 
-                  element={<Shop />} 
+                  element={<Shop />}
                 />
                 <Route 
                   path="/bestiary" 

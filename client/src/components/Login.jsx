@@ -3,133 +3,65 @@ import { useMutation } from '@apollo/client';
 //import { blob } from "stream/consumers";
 import { ADD_USER, LOGIN } from "../utils/mutations";
 import { useNavigate } from "react-router-dom";
- 
-// const CREATEPanel = document.querySelector('.createPanel');
-// const LOGINPanel = document.querySelector('.loginPanel');
-
-// const swapLOG = document.querySelector('.swapLogBTN');
-// const swapCREATE = document.querySelector('.swapCreateBTN');
-
-// if (swapLOG) {
-// 	swapLOG.addEventListener('click', () => {
-//     var createVIS = CREATEPanel.getAttribute('data-visible');
-// 		if (createVIS === "true") {
-// 			CREATEPanel.setAttribute('data-visible', false);
-// 			LOGINPanel.setAttribute('data-visible', true);
-// 		} else {
-// 			CREATEPanel.setAttribute('data-visible', true);
-// 			LOGINPanel.setAttribute('data-visible', false);
-// 		}
-// 	})
-// }
-
-// if (swapCREATE) {
-// 	swapCREATE.addEventListener('click', () => {
-// 		var loginVIS = LOGINPanel.getAttribute('data-visible');
-// 		if (loginVIS === "true") {
-// 			CREATEPanel.setAttribute('data-visible', true);
-// 			LOGINPanel.setAttribute('data-visible', false);
-// 		} else {
-// 			CREATEPanel.setAttribute('data-visible', false);
-// 			LOGINPanel.setAttribute('data-visible', true);
-// 		}
-// 	})
-// }
-
-
-// var clickableHoverSource = "../assets/sound-effects/clickable-hover.wav";
-// var clickableHover;
-
-// var clickableClickSource = "../assets/sound-effects/inventory-bloop.mp3";
-// var clickableClick;
-
-// const clickable = document.querySelectorAll('.clickable');
-
-// if (clickable) {
-// 	for (var i=0; i<clickable.length; i++) {
-// 		clickable[i].addEventListener('mouseover', () => {
-// 			clickableHover = new Audio(clickableHoverSource);
-// 			clickableHover.muted = false;
-// 			clickableHover.volume = .80;
-// 			clickableHover.play();
-// 		})
-// 	}
-// 	for (var i=0; i<clickable.length; i++) {
-// 		clickable[i].addEventListener('click', () => {
-// 			clickableClick = new Audio(clickableClickSource);
-// 			clickableClick.muted = false;
-// 			clickableClick.volume = .80;
-// 			clickableClick.play();
-// 		})
-// 	}
-// }
-
-
-//export default class App extends React.Component {
-
-
-  
+import Auth from '../utils/auth';
    
 
   const renderLogin = ()  => {
 
-    //console.log(ADD_USER);
+
 
     const navigate = useNavigate();
     const [login, loginData ] = useMutation(LOGIN);
     const [createUser, CreateUserData ] = useMutation(ADD_USER);
 
     
-    const  onNewUser =  (e) => {
+    const onNewUser = (e) => {
       e.preventDefault()
 
       const c_userNameEl = document.querySelector("#cUserName");
       const c_emailEl = document.querySelector("#cEmail");
       const c_passwordEl = document.querySelector("#cPassword");
 
-
-      createUser({ 
-        variables:{
-          username: c_userNameEl.value, 
-          email: c_emailEl.value, 
-          password:c_passwordEl.value
-        }
-      })
-      .then( (data) =>{
-       console.log( data )
-       navigate('/')
+      try {
+        const DATA = createUser({ 
+          variables:{
+            username: c_userNameEl.value, 
+            email: c_emailEl.value, 
+            password:c_passwordEl.value
+          }
+        })
+        DATA.then(({data}) => {
+          console.log(data)
+          Auth.login(data.addUser.token)
+        })
+      } catch(err) {
+        console.error(err)
+        alert("Invalid signup information.")
       }
-      )
-      .catch((data) => console.log(data))
-
-      
     }
 
     const onLogin =  (e) => {
-      
-
-      
-
-
       e.preventDefault()
 
       const l_userNameEl = document.querySelector("#lUserName");
       const l_passwordEl = document.querySelector("#lPassword");
 
 
-      login({ 
+      const DATA = login({ 
         variables:{
           username: l_userNameEl.value, 
           password: l_passwordEl.value
         }
       })
-      .then( (data) =>{
+      DATA.then(({data}) => {
           console.log( data );
-          navigate('/');
+          Auth.login(data.login.token)
         }
       )
-      .catch((data) => console.log(data))
-
+      .catch((err) => {
+        console.error(err)
+        alert("Incorrect login information.")
+      })
       
       
     }
@@ -139,7 +71,7 @@ import { useNavigate } from "react-router-dom";
       <>
         <div className="loginBG"></div>
 
-        <div className="createPanel" data-visble="true">
+        <div className="createPanel" data-visible="false">
           <h1 className="createHeader">Create Account</h1>
 
           <div className="formHolder">
@@ -200,7 +132,7 @@ import { useNavigate } from "react-router-dom";
           </div>
         </div>
 
-        <div className="loginPanel" data-visible="false">
+        <div className="loginPanel" data-visible="true">
           <h1 className="createHeader">Sign In</h1>
 
           <div className="formHolder">
