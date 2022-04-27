@@ -1,52 +1,51 @@
 import React from "react";
+import { useQuery } from '@apollo/client';
 
-var rankInc = 0;
+import { LEADERBOARD_QUERY } from "../utils/queries";
 
-const players = [
-    {
-        _id: 12313123312123123,
-        score: 131313300,
-        username: 'H4cker'
-    },
-    {
-        score: 2300,
-        username: 'Player3'
-    },
-    {
-        score: 200,
-        username: 'Player2'
-    },
-    {
-        score: 100,
-        username: 'Player1'
-    },
-].map((anObjectMapped, index) => {
-    rankInc++;
-    return (
-        <div className="scoreRow" key={`${anObjectMapped.username}_{anObjectMapped.score}`}>
-            <div className="RANK scoreRowPiece">
-                {rankInc + ":"}
+
+
+
+const leaderboardPage = () => {
+    
+    
+    const {loading, data}  = useQuery(LEADERBOARD_QUERY);
+    
+    var rankInc = 0;
+
+    // try {
+    //     console.log(data)
+    // } catch(err) {
+    //     console.error(err)
+    //     alert("Can't load leaderboard scores. :(")
+    // }
+
+    // console.log(leaderboard())
+if (!loading) {
+    var players = data.leaderboard.map((anObjectMapped, index) => {
+        rankInc++;
+        return (
+            <div className="scoreRow" key={`${anObjectMapped.username}_{anObjectMapped.score}`}>
+                <div className="RANK scoreRowPiece">
+                    {rankInc + ":"}
+                </div>
+                <div className="NAME scoreRowPiece">
+                    {anObjectMapped.username}
+                </div>
+                <div className="MID scoreRowPiece">
+                    
+                </div>
+                <div className="SCORE scoreRowPiece">
+                    {anObjectMapped.score}
+                </div>
             </div>
-            <div className="NAME scoreRowPiece">
-                {anObjectMapped.username}
-            </div>
-            <div className="MID scoreRowPiece">
-                
-            </div>
-            <div className="SCORE scoreRowPiece">
-                {anObjectMapped.score}
-            </div>
-        </div>
-    );
-})
+        );
+    })
+    console.log(players)
+} else {
+    console.log('loading');
+}
 
-const scoreSection = document.querySelector('.scoringSection');
-
-// for (var i = 0)
-
-
-export default class App extends React.Component {
-	render() {
 		return (
 			<>
                 <div className="leaderboardBG"></div>
@@ -106,5 +105,5 @@ export default class App extends React.Component {
 
 			</>
 		);
-	}
 }
+export default leaderboardPage;

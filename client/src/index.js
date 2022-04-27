@@ -58,13 +58,10 @@ client
 .query(
 {
   query: gql`
-    query Users 
-    {
-      users 
-      {
+    query Query {
+      leaderboard {
         username
-        _id
-        password
+        score
       }
     }
   `

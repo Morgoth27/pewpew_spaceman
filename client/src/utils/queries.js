@@ -11,3 +11,11 @@ query users {
     }
 }`
 
+export const LEADERBOARD_QUERY = gql`
+    query leaderboarders {
+        leaderboard {
+            username
+            score
+        }
+    }
+`

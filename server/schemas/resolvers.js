@@ -30,7 +30,7 @@ const resolvers = {
       throw new AuthenticationError('Please log in.');
     },
     leaderboard: async () => {
-      return Score.find().sort({score: -1, username: 1}).limit(10);
+      return Score.find().sort({score: -1, username: 1});
     },
 
   },

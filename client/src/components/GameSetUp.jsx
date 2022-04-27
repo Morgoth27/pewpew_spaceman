@@ -1250,7 +1250,6 @@ class Main extends Phaser.Scene {
       emergencySound.play();
       document.querySelector('.playerScore').innerHTML = " " + SCORE;
       // scoreEl.textContent = "test";
-      var finalSCORE = SCORE;
       console.log(scoreEl);
       gameOver.style.bottom = "0%";
       gameOver.style.background = "rgba(14, 0, 0, 0.8)";
@@ -1630,10 +1629,12 @@ function updateScore() {
 }
 
 
+import { useMutation } from '@apollo/client';
+import { SUBMIT_SCORE } from "../utils/mutations";
+import decode from 'jwt-decode';
 
-export default class App extends React.Component {
+const gameHTML = () => {
   
-  render() {
     {
       const canvasCount = document.querySelectorAll('canvas');
       if (canvasCount.length === 0) {
@@ -1644,6 +1645,42 @@ export default class App extends React.Component {
     }
 
     {console.log("TESTING")}
+
+    const [submitSCORE, scoreData] = useMutation(SUBMIT_SCORE)
+
+    const onSubmit = (e) => {
+      e.preventDefault();
+
+      const userToken = localStorage.getItem("id_token");
+      
+      const decoded = decode(userToken);
+      console.log(decoded.data.username);
+
+      var userNameAndScore = {
+        username: decoded.data.username,
+        score: SCORE
+      }
+      console.log(userNameAndScore);
+      try {
+        const newScore = submitSCORE({
+          variables: {
+            username: decoded.data.username,
+            score: SCORE
+          }
+        })
+        newScore.then(({data}) => {
+          console.log(data);
+        }).catch((err) => {
+          console.error(err); 
+        })
+      } catch(err) {
+        console.error(err)
+        alert("Couldn't submit score")
+      }
+    }
+
+
+
     return (
       <>
                 <script src="../assets/engine/phaser.min.js"></script>
@@ -1655,6 +1692,9 @@ export default class App extends React.Component {
                       <div className="score">Score:</div>
                       <div className="playerScore"></div>
                     </div>
+                    <form className="submitScoreForm" data-visible="true">
+                      <button type="submit" className="clickable" id="submitScore" onClick={onSubmit}>Submit Score</button>
+                    </form> 
                     <div className="retryOrHome">
                       <div className="returnHome clickable">
                         <a href={`/`}>Return Home</a>
@@ -1670,5 +1710,5 @@ export default class App extends React.Component {
 
 			</>
 		);
-	}
 }
+export default gameHTML;

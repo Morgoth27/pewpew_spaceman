@@ -47,9 +47,6 @@ mutation removeUser($id: ID!) {
 
 export const SUBMIT_SCORE = gql`
 mutation submitScore($username: String!, $score: Int!) {
-    submitScore(username: $username, score: $score) {
-        username
-        score
-    }
+    submitScore(username: $username, score: $score)
 }
 `
