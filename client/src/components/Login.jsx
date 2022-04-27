@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/client';
 //import { blob } from "stream/consumers";
 import { ADD_USER, LOGIN } from "../utils/mutations";
 import { useNavigate } from "react-router-dom";
+import Auth from '../utils/auth';
  
 // const CREATEPanel = document.querySelector('.createPanel');
 // const LOGINPanel = document.querySelector('.loginPanel');
@@ -73,63 +74,60 @@ import { useNavigate } from "react-router-dom";
 
   const renderLogin = ()  => {
 
-    //console.log(ADD_USER);
+
 
     const navigate = useNavigate();
     const [login, loginData ] = useMutation(LOGIN);
     const [createUser, CreateUserData ] = useMutation(ADD_USER);
 
     
-    const  onNewUser =  (e) => {
+    const onNewUser = (e) => {
       e.preventDefault()
 
       const c_userNameEl = document.querySelector("#cUserName");
       const c_emailEl = document.querySelector("#cEmail");
       const c_passwordEl = document.querySelector("#cPassword");
 
-
-      createUser({ 
-        variables:{
-          username: c_userNameEl.value, 
-          email: c_emailEl.value, 
-          password:c_passwordEl.value
-        }
-      })
-      .then( (data) =>{
-       console.log( data )
-       navigate('/')
+      try {
+        const DATA = createUser({ 
+          variables:{
+            username: c_userNameEl.value, 
+            email: c_emailEl.value, 
+            password:c_passwordEl.value
+          }
+        })
+        DATA.then(({data}) => {
+          console.log(data)
+          Auth.login(data.addUser.token)
+        })
+      } catch(err) {
+        console.error(err)
+        alert("Invalid signup information.")
       }
-      )
-      .catch((data) => console.log(data))
-
-      
     }
 
     const onLogin =  (e) => {
-      
-
-      
-
-
       e.preventDefault()
 
       const l_userNameEl = document.querySelector("#lUserName");
       const l_passwordEl = document.querySelector("#lPassword");
 
 
-      login({ 
+      const DATA = login({ 
         variables:{
           username: l_userNameEl.value, 
           password: l_passwordEl.value
         }
       })
-      .then( (data) =>{
+      DATA.then(({data}) => {
           console.log( data );
-          navigate('/');
+          Auth.login(data.login.token)
         }
       )
-      .catch((data) => console.log(data))
-
+      .catch((err) => {
+        console.error(err)
+        alert("Incorrect login information.")
+      })
       
       
     }
@@ -139,7 +137,7 @@ import { useNavigate } from "react-router-dom";
       <>
         <div className="loginBG"></div>
 
-        <div className="createPanel" data-visble="true">
+        <div className="createPanel" data-visible="false">
           <h1 className="createHeader">Create Account</h1>
 
           <div className="formHolder">
@@ -200,7 +198,7 @@ import { useNavigate } from "react-router-dom";
           </div>
         </div>
 
-        <div className="loginPanel" data-visible="false">
+        <div className="loginPanel" data-visible="true">
           <h1 className="createHeader">Sign In</h1>
 
           <div className="formHolder">

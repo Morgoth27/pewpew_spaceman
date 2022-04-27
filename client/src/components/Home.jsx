@@ -28,7 +28,7 @@ export default class App extends React.Component {
               <h2 className="spacemanSad">Spaceman will miss you!</h2>
 
               <div className="stay clickable">Stay</div>
-              <div className="signOutSad clickable">Sign Out</div>
+              <div className="signOutSad clickable" onClick={() => {localStorage.removeItem("id_token")}}><Link to={`/login`}>Sign Out</Link></div>
             </div>
           </div>
 

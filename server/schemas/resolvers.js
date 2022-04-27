@@ -47,13 +47,16 @@ const resolvers = {
     for (let i = 0; i < grayUpgrades.length; i++) {
       user.upgrades.push(grayUpgrades[i])
     }
-
-      const token = signToken(user);
-      return { token, user };
+      try {
+        const token = signToken(user);
+        return { token, user };
+      } catch(err) {
+        console.log(err)
+      }
       //when creating a new user, be sure to wipe acquired upgrades and score, but show list of all upgrades
     },
-    login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+    login: async (parent, { username, password }) => {
+      const user = await User.findOne({ username });
 
       if (!user) {
         throw new AuthenticationError('No user found.');
@@ -65,9 +68,12 @@ const resolvers = {
         throw new AuthenticationError('Incorrect credentials.');
       }
 
-      const token = signToken(user);
-
-      return { token, user };
+      try {
+        const token = signToken(user);
+        return { token, user };
+      } catch(err) {
+        console.log(err)
+      }
     },
     submitScore: async (parent, { username, score }) => {
       const user = await Score.create(
