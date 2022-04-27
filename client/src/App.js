@@ -20,10 +20,11 @@ import Leaderboards from "./components/Leaderboards.jsx";
 import GameSetUp from "./components/GameSetUp.jsx";
 
 
-const httpLink = createHttpLink({
-  uri: '/graphql',
-});
+// const httpLink = createHttpLink({
+//   uri: '/graphql',
+// });
 
+/*
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
@@ -36,38 +37,19 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
+*/
 
 
 
 
-const client = new ApolloClient({
-    link: authLink.concat(httpLink),
-    cache: new InMemoryCache(),
-  });
-
-
-
-
-
-client
-  .query({
-    query: gql`
-      query users {
-        User {
-        _id
-        username
-    }
-      }
-    `
-  })
-  .then(result => console.log(result));
 
 function App() {
 
    return (
-    <ApolloProvider client={client}>
-        {/* Wrap page elements in Router component to keep track of location state */}
+    
+        
         <Router>
+          {/* Wrap page elements in Router component to keep track of location state */}
           <div className="flex-column justify-flex-start min-100-vh">
             {/* <Header /> */}
             <div className="container">
@@ -105,7 +87,7 @@ function App() {
             {/* <Footer /> */}
           </div>
         </Router>
-      </ApolloProvider> 
+      
     );
 
 }

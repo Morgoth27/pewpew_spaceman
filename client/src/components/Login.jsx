@@ -1,68 +1,140 @@
 import React from "react";
+import { useMutation } from '@apollo/client';
+//import { blob } from "stream/consumers";
+import { ADD_USER, LOGIN } from "../utils/mutations";
+import { useNavigate } from "react-router-dom";
+ 
+// const CREATEPanel = document.querySelector('.createPanel');
+// const LOGINPanel = document.querySelector('.loginPanel');
 
-const CREATEPanel = document.querySelector('.createPanel');
-const LOGINPanel = document.querySelector('.loginPanel');
+// const swapLOG = document.querySelector('.swapLogBTN');
+// const swapCREATE = document.querySelector('.swapCreateBTN');
 
-const swapLOG = document.querySelector('.swapLogBTN');
-const swapCREATE = document.querySelector('.swapCreateBTN');
+// if (swapLOG) {
+// 	swapLOG.addEventListener('click', () => {
+//     var createVIS = CREATEPanel.getAttribute('data-visible');
+// 		if (createVIS === "true") {
+// 			CREATEPanel.setAttribute('data-visible', false);
+// 			LOGINPanel.setAttribute('data-visible', true);
+// 		} else {
+// 			CREATEPanel.setAttribute('data-visible', true);
+// 			LOGINPanel.setAttribute('data-visible', false);
+// 		}
+// 	})
+// }
 
-if (swapLOG) {
-	swapLOG.addEventListener('click', () => {
-    var createVIS = CREATEPanel.getAttribute('data-visible');
-		if (createVIS === "true") {
-			CREATEPanel.setAttribute('data-visible', false);
-			LOGINPanel.setAttribute('data-visible', true);
-		} else {
-			CREATEPanel.setAttribute('data-visible', true);
-			LOGINPanel.setAttribute('data-visible', false);
-		}
-	})
-}
-
-if (swapCREATE) {
-	swapCREATE.addEventListener('click', () => {
-		var loginVIS = LOGINPanel.getAttribute('data-visible');
-		if (loginVIS === "true") {
-			CREATEPanel.setAttribute('data-visible', true);
-			LOGINPanel.setAttribute('data-visible', false);
-		} else {
-			CREATEPanel.setAttribute('data-visible', false);
-			LOGINPanel.setAttribute('data-visible', true);
-		}
-	})
-}
-
-
-var clickableHoverSource = "../assets/sound-effects/clickable-hover.wav";
-var clickableHover;
-
-var clickableClickSource = "../assets/sound-effects/inventory-bloop.mp3";
-var clickableClick;
-
-const clickable = document.querySelectorAll('.clickable');
-
-if (clickable) {
-	for (var i=0; i<clickable.length; i++) {
-		clickable[i].addEventListener('mouseover', () => {
-			clickableHover = new Audio(clickableHoverSource);
-			clickableHover.muted = false;
-			clickableHover.volume = .80;
-			clickableHover.play();
-		})
-	}
-	for (var i=0; i<clickable.length; i++) {
-		clickable[i].addEventListener('click', () => {
-			clickableClick = new Audio(clickableClickSource);
-			clickableClick.muted = false;
-			clickableClick.volume = .80;
-			clickableClick.play();
-		})
-	}
-}
+// if (swapCREATE) {
+// 	swapCREATE.addEventListener('click', () => {
+// 		var loginVIS = LOGINPanel.getAttribute('data-visible');
+// 		if (loginVIS === "true") {
+// 			CREATEPanel.setAttribute('data-visible', true);
+// 			LOGINPanel.setAttribute('data-visible', false);
+// 		} else {
+// 			CREATEPanel.setAttribute('data-visible', false);
+// 			LOGINPanel.setAttribute('data-visible', true);
+// 		}
+// 	})
+// }
 
 
-export default class App extends React.Component {
-  render() {
+// var clickableHoverSource = "../assets/sound-effects/clickable-hover.wav";
+// var clickableHover;
+
+// var clickableClickSource = "../assets/sound-effects/inventory-bloop.mp3";
+// var clickableClick;
+
+// const clickable = document.querySelectorAll('.clickable');
+
+// if (clickable) {
+// 	for (var i=0; i<clickable.length; i++) {
+// 		clickable[i].addEventListener('mouseover', () => {
+// 			clickableHover = new Audio(clickableHoverSource);
+// 			clickableHover.muted = false;
+// 			clickableHover.volume = .80;
+// 			clickableHover.play();
+// 		})
+// 	}
+// 	for (var i=0; i<clickable.length; i++) {
+// 		clickable[i].addEventListener('click', () => {
+// 			clickableClick = new Audio(clickableClickSource);
+// 			clickableClick.muted = false;
+// 			clickableClick.volume = .80;
+// 			clickableClick.play();
+// 		})
+// 	}
+// }
+
+
+//export default class App extends React.Component {
+
+
+  
+   
+
+  const renderLogin = ()  => {
+
+    //console.log(ADD_USER);
+
+    const navigate = useNavigate();
+    const [login, loginData ] = useMutation(LOGIN);
+    const [createUser, CreateUserData ] = useMutation(ADD_USER);
+
+    
+    const  onNewUser =  (e) => {
+      e.preventDefault()
+
+      const c_userNameEl = document.querySelector("#cUserName");
+      const c_emailEl = document.querySelector("#cEmail");
+      const c_passwordEl = document.querySelector("#cPassword");
+
+
+      createUser({ 
+        variables:{
+          username: c_userNameEl.value, 
+          email: c_emailEl.value, 
+          password:c_passwordEl.value
+        }
+      })
+      .then( (data) =>{
+       console.log( data )
+       navigate('/')
+      }
+      )
+      .catch((data) => console.log(data))
+
+      
+    }
+
+    const onLogin =  (e) => {
+      
+
+      
+
+
+      e.preventDefault()
+
+      const l_userNameEl = document.querySelector("#lUserName");
+      const l_passwordEl = document.querySelector("#lPassword");
+
+
+      login({ 
+        variables:{
+          username: l_userNameEl.value, 
+          password: l_passwordEl.value
+        }
+      })
+      .then( (data) =>{
+          console.log( data );
+          navigate('/');
+        }
+      )
+      .catch((data) => console.log(data))
+
+      
+      
+    }
+
+
     return (
       <>
         <div className="loginBG"></div>
@@ -72,8 +144,7 @@ export default class App extends React.Component {
 
           <div className="formHolder">
             <form
-              action="/api/users/register"
-              method="post"
+              
               className="userEntryForm"
               data-visible="true"
             >
@@ -83,6 +154,7 @@ export default class App extends React.Component {
                 </label>
                 <input
                   name="name"
+                  id="cUserName"
                   type="text"
                   className="userName input clickable"
                   required
@@ -95,6 +167,7 @@ export default class App extends React.Component {
                 </label>
                 <input
                   name="email"
+                  id="cEmail"
                   type="text"
                   className="userEmail input clickable"
                   required
@@ -107,13 +180,14 @@ export default class App extends React.Component {
                 </label>
                 <input
                   name="password"
+                  id="cPassword"
                   type="password"
                   className="userPassword input clickable"
                   required
                 ></input>
               </div>
 
-              <button type="submit" className="signupBtn clickable" id="signupBtn">
+              <button type="submit" className="signupBtn clickable" id="signupBtn" onClick={onNewUser}>
                 Submit
               </button>
             </form>
@@ -131,8 +205,7 @@ export default class App extends React.Component {
 
           <div className="formHolder">
             <form
-              action="/api/users/login"
-              method="post"
+              
               className="userEntryForm"
               data-visible="true"
             >
@@ -142,6 +215,7 @@ export default class App extends React.Component {
                 </label>
                 <input
                   name="name"
+                  id="lUserName"
                   type="text"
                   className="userName input clickable"
                   required
@@ -154,13 +228,14 @@ export default class App extends React.Component {
                 </label>
                 <input
                   name="password"
+                  id="lPassword"
                   type="password"
                   className="userPassword input clickable"
                   required
                 ></input>
               </div>
 
-              <button type="submit" className="loginBtn clickable" id="loginBtn">
+              <button type="submit" className="loginBtn clickable" id="loginBtn" onClick={onLogin}>
                 Submit
               </button>
             </form>
@@ -177,4 +252,6 @@ export default class App extends React.Component {
       </>
     );
   }
-}
+
+  export default renderLogin;
+//}

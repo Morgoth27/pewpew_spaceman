@@ -1,12 +1,12 @@
 import React from "react";
 
-// import {
-//   ApolloClient,
-//   InMemoryCache,
-//   ApolloProvider,
-//   useQuery,
-//   gql
-// } from "@apollo/client";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  useQuery,
+  gql
+} from "@apollo/client";
 
 
 import ReactDOM from "react-dom";
@@ -44,7 +44,42 @@ import './css/game.css';
 
 
 
+const client = new ApolloClient({
+  //link: authLink.concat(httpLink),
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
+
+
+
+
+
+client
+.query(
+{
+  query: gql`
+    query Users 
+    {
+      users 
+      {
+        username
+        _id
+        password
+      }
+    }
+  `
+})
+.then(result => console.log(result));
+
+
 ReactDOM.render(
-        <App />,
+  
+  <ApolloProvider client={client}>
+        <App />
+  </ApolloProvider>,
+
+
+
   document.getElementById('root')
+  
 );
