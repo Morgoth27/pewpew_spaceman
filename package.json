@@ -21,6 +21,7 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
+    "dotenv": "^16.0.0",
     "node": "^17.7.2"
   }
 }
