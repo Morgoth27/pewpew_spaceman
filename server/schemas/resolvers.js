@@ -82,7 +82,6 @@ const resolvers = {
         //   score: score
         // }}
         );
-        window.location.assign('/leaderboards');
         return "Score submitted."
     },
 
