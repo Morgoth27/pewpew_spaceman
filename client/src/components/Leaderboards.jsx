@@ -13,6 +13,11 @@ const leaderboardPage = () => {
     //     window.location.reload();
     // }
     
+    const canvas = document.querySelector('canvas');
+    if (canvas) {
+      canvas.remove()
+    }
+
     
     const {loading, data}  = useQuery(LEADERBOARD_QUERY);
     

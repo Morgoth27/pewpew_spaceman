@@ -1634,6 +1634,7 @@ import { SUBMIT_SCORE } from "../utils/mutations";
 import decode from 'jwt-decode';
 
 const gameHTML = () => {
+
   
     {
       const canvasCount = document.querySelectorAll('canvas');

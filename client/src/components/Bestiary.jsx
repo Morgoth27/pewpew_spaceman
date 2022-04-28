@@ -1,8 +1,16 @@
 import React from "react";
 
 
-export default class App extends React.Component {
-	render() {
+const bestiary = () => {
+
+
+    const canvas = document.querySelector('canvas');
+    if (canvas) {
+      canvas.remove()
+    }
+
+
+
 		return (
 			<>
 
@@ -131,4 +139,4 @@ export default class App extends React.Component {
 			</>
 		);
 	}
-}
+    export default bestiary;

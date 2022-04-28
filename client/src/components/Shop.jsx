@@ -2,10 +2,12 @@ import React from "react";
 import decode from 'jwt-decode';
 // hello
 
-export default class App extends React.Component {
-  render() {
+const shopPage = () => {
 
-
+  const canvas = document.querySelector('canvas');
+  if (canvas) {
+    canvas.remove()
+  }
 
     return (
       <>
@@ -210,4 +212,4 @@ export default class App extends React.Component {
       </>
     );
   }
-}
+  export default shopPage;

@@ -64,7 +64,10 @@ import { Link } from "react-router-dom";
 const homePage = () => {
 
 
-
+  const canvas = document.querySelector('canvas');
+  if (canvas) {
+    canvas.remove()
+  }
 
 
 

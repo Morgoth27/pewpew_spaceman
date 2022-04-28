@@ -65,7 +65,10 @@ import Auth from '../utils/auth';
 // 	})
   const renderLogin = ()  => {
 
-
+    const canvas = document.querySelector('canvas');
+    if (canvas) {
+      canvas.remove()
+    }
 
 
 
