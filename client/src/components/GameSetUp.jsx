@@ -1632,8 +1632,10 @@ function updateScore() {
 import { useMutation } from '@apollo/client';
 import { SUBMIT_SCORE } from "../utils/mutations";
 import decode from 'jwt-decode';
+import { useNavigate } from "react-router-dom";
 
 const gameHTML = () => {
+  const navigate = useNavigate();
   
     {
       const canvasCount = document.querySelectorAll('canvas');
@@ -1670,6 +1672,8 @@ const gameHTML = () => {
         })
         newScore.then(({data}) => {
           console.log(data);
+          window.location.assign('/leaderboards')
+
         }).catch((err) => {
           console.error(err); 
         })

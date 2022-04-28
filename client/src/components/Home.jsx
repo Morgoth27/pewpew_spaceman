@@ -3,11 +3,103 @@ import { Link } from "react-router-dom";
 
 
 
+//   var clickableHoverSource = "../assets/clickable-hover.wav";
+// var clickableHover;
+
+// var clickableClickSource = "../assets/high-bloop.mp3";
+// var clickableClick;
+
+// const clickable = document.querySelectorAll('.clickable');
+
+// if (clickable) {
+// 	for (var i=0; i<clickable.length; i++) {
+// 		clickable[i].addEventListener('mouseover', () => {
+// 			clickableHover = new Audio(clickableHoverSource);
+// 			clickableHover.muted = false;
+// 			clickableHover.volume = .80;
+// 			clickableHover.play();
+// 		})
+// 	}
+// 	for (var i=0; i<clickable.length; i++) {
+// 		clickable[i].addEventListener('click', () => {
+// 			clickableClick = new Audio(clickableClickSource);
+// 			clickableClick.muted = false;
+// 			clickableClick.volume = .80;
+// 			clickableClick.play();
+// 		})
+// 	}
+// }
 
 
 
-export default class App extends React.Component {
-  render() {
+
+
+
+
+
+
+
+
+//   const signOutConfirm = document.querySelector(".holderHolder");
+
+//   const stay = document.querySelector('.stay');
+//   const signOutSad = document.querySelector('.signOutSad');
+  
+//   const signOut = document.querySelector('.signOut');
+  
+
+//     signOut.addEventListener('click', () => {
+//       signOutConfirm.style.transform = "scale(1)";
+//       signOutConfirm.style.marginRight = "0";
+//     })
+//     stay.addEventListener('click', () => {
+//       signOutConfirm.style.transform = "scale(0)";
+//       signOutConfirm.style.marginRight = "-200%";
+//     })
+//     signOutSad.addEventListener('click', () => {
+//       console.log("signed out")
+//     })
+
+
+const homePage = () => {
+
+
+  const canvas = document.querySelector('canvas');
+  if (canvas) {
+    canvas.remove()
+  }
+
+
+
+
+ const signOut = () => {
+  const signOutConfirm = document.querySelector(".holderHolder");
+
+  const stay = document.querySelector('.stay');
+  const signOutSad = document.querySelector('.signOutSad');
+  
+  const signOut = document.querySelector('.signOut');
+  
+
+    signOut.addEventListener('click', () => {
+      signOutConfirm.style.transform = "scale(1)";
+      signOutConfirm.style.marginRight = "0";
+    })
+    stay.addEventListener('click', () => {
+      signOutConfirm.style.transform = "scale(0)";
+      signOutConfirm.style.marginRight = "-200%";
+    })
+    signOutSad.addEventListener('click', () => {
+      console.log("signed out")
+    })
+ }
+
+
+
+
+
+
+
     return (
       <>
         <div className="homeBG"></div>
@@ -27,7 +119,7 @@ export default class App extends React.Component {
 
               <h2 className="spacemanSad">Spaceman will miss you!</h2>
 
-              <div className="stay clickable">Stay</div>
+              <div className="stay clickable" onClick={() => {const signOutConfirm = document.querySelector(".holderHolder");signOutConfirm.style.transform = "scale(0)";signOutConfirm.style.marginRight = "-200%";}}>Stay</div>
               <div className="signOutSad clickable" onClick={() => {localStorage.removeItem("id_token")}}><Link to={`/login`}>Sign Out</Link></div>
             </div>
           </div>
@@ -51,7 +143,11 @@ export default class App extends React.Component {
               Options
             </li>
 
-            <li className="menuBTN util signOut clickable">
+            <li className="menuBTN util signOut clickable" onClick={() => {  
+              const signOutConfirm = document.querySelector(".holderHolder");
+              signOutConfirm.style.transform = "scale(1)";
+              signOutConfirm.style.marginRight = "0";
+            }}>
               Sign Out
             </li>
           </ul>
@@ -62,4 +158,4 @@ export default class App extends React.Component {
       </>
     );
   }
-}
+  export default homePage;

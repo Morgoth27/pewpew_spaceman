@@ -69,6 +69,46 @@ const client = new ApolloClient({
 // .then(result => console.log(result));
 
 
+
+
+var clickableHoverSource = "../assets/clickable-hover.wav";
+var clickableHover;
+
+var clickableClickSource = "../assets/high-bloop.mp3";
+var clickableClick;
+
+const clickable = document.querySelectorAll('.clickable');
+
+if (clickable) {
+	for (var i=0; i<clickable.length; i++) {
+		clickable[i].addEventListener('mouseover', () => {
+			clickableHover = new Audio(clickableHoverSource);
+			clickableHover.muted = false;
+			clickableHover.volume = .80;
+			clickableHover.play();
+		})
+	}
+	for (var i=0; i<clickable.length; i++) {
+		clickable[i].addEventListener('click', () => {
+			clickableClick = new Audio(clickableClickSource);
+			clickableClick.muted = false;
+			clickableClick.volume = .80;
+			clickableClick.play();
+		})
+	}
+}
+
+
+
+
+
+
+const canvas = document.querySelector('canvas');
+if (canvas) {
+  canvas.remove()
+}
+
+
 ReactDOM.render(
   
   <ApolloProvider client={client}>

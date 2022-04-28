@@ -7,7 +7,17 @@ import { LEADERBOARD_QUERY } from "../utils/queries";
 
 
 const leaderboardPage = () => {
+
+
+    // window.onload = () => {
+    //     window.location.reload();
+    // }
     
+    const canvas = document.querySelector('canvas');
+    if (canvas) {
+      canvas.remove()
+    }
+
     
     const {loading, data}  = useQuery(LEADERBOARD_QUERY);
     
@@ -41,7 +51,6 @@ if (!loading) {
             </div>
         );
     })
-    console.log(players)
 } else {
     console.log('loading');
 }
@@ -52,7 +61,7 @@ if (!loading) {
 
 				<div className="topPanel">
                     <h1 className="leaderboardHeader">Leaderboards</h1>
-
+                    <div className="returnHome clickable" onClick={() => {window.location.assign("/")}}>Home</div>
 				</div>
 
 

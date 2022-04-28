@@ -19,37 +19,36 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/dist')));
+  app.use(express.static(path.join(__dirname, '../client/build')));
 // }
 
 
 
-//console.log("server start")
 
 
   app.get('/', (req, res) => {
     //console.log("route attemtped")
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
   });
   app.get('/login', (req, res) => {
     //console.log("route attemtped")
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
   });
   app.get('/shop', (req, res) => {
     //console.log("route attemtped")
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
   });
   app.get('/bestiary', (req, res) => {
     //console.log("route attemtped")
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
   });
   app.get('/leaderboards', (req, res) => {
     //console.log("route attemtped")
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
   });
   app.get('/gamesetup', (req, res) => {
     //console.log("route attemtped")
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
   });
 
 

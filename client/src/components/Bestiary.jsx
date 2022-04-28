@@ -1,8 +1,16 @@
 import React from "react";
 
 
-export default class App extends React.Component {
-	render() {
+const bestiary = () => {
+
+
+    const canvas = document.querySelector('canvas');
+    if (canvas) {
+      canvas.remove()
+    }
+
+
+
 		return (
 			<>
 
@@ -12,6 +20,8 @@ export default class App extends React.Component {
                     <h1 className="bestiaryHeader">Bestiary</h1>
 
                         <div className="bestiaryMessage">Destroy enemies to unlock their sprites!</div>
+
+                        <div className="returnHome clickable" onClick={() => {window.location.assign("/")}}>Home</div>
 				</div>
 
 
@@ -131,4 +141,4 @@ export default class App extends React.Component {
 			</>
 		);
 	}
-}
+    export default bestiary;
