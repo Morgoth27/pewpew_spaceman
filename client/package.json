@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "env IMAGE_INLINE_SIZE_LIMIT=0 react-scripts build",
-    "start": "webpack --config webpack/base.js "
+    "start": "webpack --config webpack/base.js"
   },
   "license": "MIT",
   "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
