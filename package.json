@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "dotenv": "^16.0.0",
+    "graphql": "^16.4.0",
     "node": "^17.7.2"
   }
 }
