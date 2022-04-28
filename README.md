@@ -81,6 +81,8 @@ npm i
 * `Phaser3`
 * `Planck js`
 * `React js`
+* `GraphQL`
+* `Apollo`
 * `NPM`
 * `Handlebars`
 * `bcrypt`
@@ -113,5 +115,6 @@ In alphabetical order by surname.
 
 ## License
 ----------
+
 * [License](#license)
 (C) TOAD KING 2022
