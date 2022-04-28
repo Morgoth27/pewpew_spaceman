@@ -1632,9 +1632,10 @@ function updateScore() {
 import { useMutation } from '@apollo/client';
 import { SUBMIT_SCORE } from "../utils/mutations";
 import decode from 'jwt-decode';
+import { useNavigate } from "react-router-dom";
 
 const gameHTML = () => {
-
+  const navigate = useNavigate();
   
     {
       const canvasCount = document.querySelectorAll('canvas');
@@ -1671,6 +1672,8 @@ const gameHTML = () => {
         })
         newScore.then(({data}) => {
           console.log(data);
+          window.location.assign('/leaderboards')
+
         }).catch((err) => {
           console.error(err); 
         })
@@ -1694,9 +1697,7 @@ const gameHTML = () => {
                       <div className="playerScore"></div>
                     </div>
                     <form className="submitScoreForm" data-visible="true">
-                      <button type="submit" className="clickable" id="submitScore" onClick={() => {
-                        onSubmit;
-                      }}><Link to={`/leaderboards`}>Submit Score</Link></button>
+                      <button type="submit" className="clickable" id="submitScore" onClick={onSubmit}>Submit Score</button>
                     </form> 
                     <div className="retryOrHome">
                       <div className="returnHome clickable">
