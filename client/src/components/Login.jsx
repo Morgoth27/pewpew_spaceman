@@ -11,64 +11,64 @@ import Auth from '../utils/auth';
 
 
 
-var clickableHoverSource = "../assets/clickable-hover.wav";
-var clickableHover;
+// var clickableHoverSource = "../assets/clickable-hover.wav";
+// var clickableHover;
 
-var clickableClickSource = "../assets/high-bloop.mp3";
-var clickableClick;
+// var clickableClickSource = "../assets/high-bloop.mp3";
+// var clickableClick;
 
-const clickable = document.querySelectorAll('.clickable');
+// const clickable = document.querySelectorAll('.clickable');
 
-if (clickable) {
-	for (var i=0; i<clickable.length; i++) {
-		clickable[i].addEventListener('mouseover', () => {
-			clickableHover = new Audio(clickableHoverSource);
-			clickableHover.muted = false;
-			clickableHover.volume = .80;
-			clickableHover.play();
-		})
-	}
-	for (var i=0; i<clickable.length; i++) {
-		clickable[i].addEventListener('click', () => {
-			clickableClick = new Audio(clickableClickSource);
-			clickableClick.muted = false;
-			clickableClick.volume = .80;
-			clickableClick.play();
-		})
-	}
-}
-
-
+// if (clickable) {
+// 	for (var i=0; i<clickable.length; i++) {
+// 		clickable[i].addEventListener('mouseover', () => {
+// 			clickableHover = new Audio(clickableHoverSource);
+// 			clickableHover.muted = false;
+// 			clickableHover.volume = .80;
+// 			clickableHover.play();
+// 		})
+// 	}
+// 	for (var i=0; i<clickable.length; i++) {
+// 		clickable[i].addEventListener('click', () => {
+// 			clickableClick = new Audio(clickableClickSource);
+// 			clickableClick.muted = false;
+// 			clickableClick.volume = .80;
+// 			clickableClick.play();
+// 		})
+// 	}
+// }
 
 
-    const CREATEPanel = document.querySelector('.createPanel');
-const LOGINPanel = document.querySelector('.loginPanel');
-
-const swapLOG = document.querySelector('.swapLogBTN');
-const swapCREATE = document.querySelector('.swapCreateBTN');
 
 
-	swapLOG.addEventListener('click', () => {
-	var createVIS = CREATEPanel.getAttribute('data-visible');
-		if (createVIS === "true") {
-			CREATEPanel.setAttribute('data-visible', false);
-			LOGINPanel.setAttribute('data-visible', true);
-		} else {
-			CREATEPanel.setAttribute('data-visible', true);
-			LOGINPanel.setAttribute('data-visible', false);
-		}
-	})
+//     const CREATEPanel = document.querySelector('.createPanel');
+// const LOGINPanel = document.querySelector('.loginPanel');
 
-	swapCREATE.addEventListener('click', () => {
-		var loginVIS = LOGINPanel.getAttribute('data-visible');
-		if (loginVIS === "true") {
-			CREATEPanel.setAttribute('data-visible', true);
-			LOGINPanel.setAttribute('data-visible', false);
-		} else {
-			CREATEPanel.setAttribute('data-visible', false);
-			LOGINPanel.setAttribute('data-visible', true);
-		}
-	})
+// const swapLOG = document.querySelector('.swapLogBTN');
+// const swapCREATE = document.querySelector('.swapCreateBTN');
+
+
+// 	swapLOG.addEventListener('click', () => {
+// 	var createVIS = CREATEPanel.getAttribute('data-visible');
+// 		if (createVIS === "true") {
+// 			CREATEPanel.setAttribute('data-visible', false);
+// 			LOGINPanel.setAttribute('data-visible', true);
+// 		} else {
+// 			CREATEPanel.setAttribute('data-visible', true);
+// 			LOGINPanel.setAttribute('data-visible', false);
+// 		}
+// 	})
+
+// 	swapCREATE.addEventListener('click', () => {
+// 		var loginVIS = LOGINPanel.getAttribute('data-visible');
+// 		if (loginVIS === "true") {
+// 			CREATEPanel.setAttribute('data-visible', true);
+// 			LOGINPanel.setAttribute('data-visible', false);
+// 		} else {
+// 			CREATEPanel.setAttribute('data-visible', false);
+// 			LOGINPanel.setAttribute('data-visible', true);
+// 		}
+// 	})
 
 
 

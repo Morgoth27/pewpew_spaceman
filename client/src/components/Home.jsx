@@ -15,34 +15,32 @@ const homePage = () => {
 
 
 
-  var clickableHoverSource = "../assets/clickable-hover.wav";
-var clickableHover;
+//   var clickableHoverSource = "../assets/clickable-hover.wav";
+// var clickableHover;
 
-var clickableClickSource = "../assets/high-bloop.mp3";
-var clickableClick;
+// var clickableClickSource = "../assets/high-bloop.mp3";
+// var clickableClick;
 
-const clickable = document.querySelectorAll('.clickable');
+// const clickable = document.querySelectorAll('.clickable');
 
-if (clickable) {
-	for (var i=0; i<clickable.length; i++) {
-		clickable[i].addEventListener('mouseover', () => {
-			clickableHover = new Audio(clickableHoverSource);
-			clickableHover.muted = false;
-			clickableHover.volume = .80;
-			clickableHover.play();
-		})
-	}
-	for (var i=0; i<clickable.length; i++) {
-		clickable[i].addEventListener('click', () => {
-			clickableClick = new Audio(clickableClickSource);
-			clickableClick.muted = false;
-			clickableClick.volume = .80;
-			clickableClick.play();
-		})
-	}
-}
-
-
+// if (clickable) {
+// 	for (var i=0; i<clickable.length; i++) {
+// 		clickable[i].addEventListener('mouseover', () => {
+// 			clickableHover = new Audio(clickableHoverSource);
+// 			clickableHover.muted = false;
+// 			clickableHover.volume = .80;
+// 			clickableHover.play();
+// 		})
+// 	}
+// 	for (var i=0; i<clickable.length; i++) {
+// 		clickable[i].addEventListener('click', () => {
+// 			clickableClick = new Audio(clickableClickSource);
+// 			clickableClick.muted = false;
+// 			clickableClick.volume = .80;
+// 			clickableClick.play();
+// 		})
+// 	}
+// }
 
 
 
@@ -52,25 +50,27 @@ if (clickable) {
 
 
 
-  const signOutConfirm = document.querySelector(".holderHolder");
 
-  const stay = document.querySelector('.stay');
-  const signOutSad = document.querySelector('.signOutSad');
+
+//   const signOutConfirm = document.querySelector(".holderHolder");
+
+//   const stay = document.querySelector('.stay');
+//   const signOutSad = document.querySelector('.signOutSad');
   
-  const signOut = document.querySelector('.signOut');
+//   const signOut = document.querySelector('.signOut');
   
 
-    signOut.addEventListener('click', () => {
-      signOutConfirm.style.transform = "scale(1)";
-      signOutConfirm.style.marginRight = "0";
-    })
-    stay.addEventListener('click', () => {
-      signOutConfirm.style.transform = "scale(0)";
-      signOutConfirm.style.marginRight = "-200%";
-    })
-    signOutSad.addEventListener('click', () => {
-      console.log("signed out")
-    })
+//     signOut.addEventListener('click', () => {
+//       signOutConfirm.style.transform = "scale(1)";
+//       signOutConfirm.style.marginRight = "0";
+//     })
+//     stay.addEventListener('click', () => {
+//       signOutConfirm.style.transform = "scale(0)";
+//       signOutConfirm.style.marginRight = "-200%";
+//     })
+//     signOutSad.addEventListener('click', () => {
+//       console.log("signed out")
+//     })
 
 
 

@@ -28,37 +28,37 @@
     </body>
     <script>
         
-// const CREATEPanel = document.querySelector('.createPanel');
-// const LOGINPanel = document.querySelector('.loginPanel');
+const CREATEPanel = document.querySelector('.createPanel');
+const LOGINPanel = document.querySelector('.loginPanel');
 
-// const swapLOG = document.querySelector('.swapLogBTN');
-// const swapCREATE = document.querySelector('.swapCreateBTN');
+const swapLOG = document.querySelector('.swapLogBTN');
+const swapCREATE = document.querySelector('.swapCreateBTN');
 
-// if (swapLOG) {
-// 	swapLOG.addEventListener('click', () => {
-// 	var createVIS = CREATEPanel.getAttribute('data-visible');
-// 		if (createVIS === "true") {
-// 			CREATEPanel.setAttribute('data-visible', false);
-// 			LOGINPanel.setAttribute('data-visible', true);
-// 		} else {
-// 			CREATEPanel.setAttribute('data-visible', true);
-// 			LOGINPanel.setAttribute('data-visible', false);
-// 		}
-// 	})
-// }
+if (swapLOG) {
+	swapLOG.addEventListener('click', () => {
+	var createVIS = CREATEPanel.getAttribute('data-visible');
+		if (createVIS === "true") {
+			CREATEPanel.setAttribute('data-visible', false);
+			LOGINPanel.setAttribute('data-visible', true);
+		} else {
+			CREATEPanel.setAttribute('data-visible', true);
+			LOGINPanel.setAttribute('data-visible', false);
+		}
+	})
+}
 
-// if (swapCREATE) {
-// 	swapCREATE.addEventListener('click', () => {
-// 		var loginVIS = LOGINPanel.getAttribute('data-visible');
-// 		if (loginVIS === "true") {
-// 			CREATEPanel.setAttribute('data-visible', true);
-// 			LOGINPanel.setAttribute('data-visible', false);
-// 		} else {
-// 			CREATEPanel.setAttribute('data-visible', false);
-// 			LOGINPanel.setAttribute('data-visible', true);
-// 		}
-// 	})
-// }
+if (swapCREATE) {
+	swapCREATE.addEventListener('click', () => {
+		var loginVIS = LOGINPanel.getAttribute('data-visible');
+		if (loginVIS === "true") {
+			CREATEPanel.setAttribute('data-visible', true);
+			LOGINPanel.setAttribute('data-visible', false);
+		} else {
+			CREATEPanel.setAttribute('data-visible', false);
+			LOGINPanel.setAttribute('data-visible', true);
+		}
+	})
+}
 
 // var clickableHoverSource = "./public/assets/clickable-hover.wav";
 // var clickableHover;
@@ -87,26 +87,26 @@
 // 	}
 // }
 
-// const signOutConfirm = document.querySelector(".holderHolder");
+const signOutConfirm = document.querySelector(".holderHolder");
 
-// const stay = document.querySelector('.stay');
-// const signOutSad = document.querySelector('.signOutSad');
+const stay = document.querySelector('.stay');
+const signOutSad = document.querySelector('.signOutSad');
 
-// const signOut = document.querySelector('.signOut');
+const signOut = document.querySelector('.signOut');
 
-// if (signOutConfirm) {
-// 	signOut.addEventListener('click', () => {
-// 		signOutConfirm.style.transform = "scale(1)";
-// 		signOutConfirm.style.marginRight = "0";
-// 	})
-// 	stay.addEventListener('click', () => {
-// 		signOutConfirm.style.transform = "scale(0)";
-// 		signOutConfirm.style.marginRight = "-200%";
-// 	})
-// 	signOutSad.addEventListener('click', () => {
-// 		console.log("signed out")
-// 	})
-// }
+if (signOutConfirm) {
+	signOut.addEventListener('click', () => {
+		signOutConfirm.style.transform = "scale(1)";
+		signOutConfirm.style.marginRight = "0";
+	})
+	stay.addEventListener('click', () => {
+		signOutConfirm.style.transform = "scale(0)";
+		signOutConfirm.style.marginRight = "-200%";
+	})
+	signOutSad.addEventListener('click', () => {
+		console.log("signed out")
+	})
+}
 
 // const leaderPanel = document.querySelectorAll('.leaderPanel');
 
