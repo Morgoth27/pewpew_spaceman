@@ -69,7 +69,27 @@ const homePage = () => {
 
 
 
+ const signOut = () => {
+  const signOutConfirm = document.querySelector(".holderHolder");
 
+  const stay = document.querySelector('.stay');
+  const signOutSad = document.querySelector('.signOutSad');
+  
+  const signOut = document.querySelector('.signOut');
+  
+
+    signOut.addEventListener('click', () => {
+      signOutConfirm.style.transform = "scale(1)";
+      signOutConfirm.style.marginRight = "0";
+    })
+    stay.addEventListener('click', () => {
+      signOutConfirm.style.transform = "scale(0)";
+      signOutConfirm.style.marginRight = "-200%";
+    })
+    signOutSad.addEventListener('click', () => {
+      console.log("signed out")
+    })
+ }
 
 
 
@@ -120,7 +140,25 @@ const homePage = () => {
               Options
             </li>
 
-            <li className="menuBTN util signOut clickable">
+            <li className="menuBTN util signOut clickable" onClick={() => {  const signOutConfirm = document.querySelector(".holderHolder");
+
+                const stay = document.querySelector('.stay');
+                const signOutSad = document.querySelector('.signOutSad');
+
+                const signOut = document.querySelector('.signOut');
+
+
+                  signOut.addEventListener('click', () => {
+                    signOutConfirm.style.transform = "scale(1)";
+                    signOutConfirm.style.marginRight = "0";
+                  })
+                  stay.addEventListener('click', () => {
+                    signOutConfirm.style.transform = "scale(0)";
+                    signOutConfirm.style.marginRight = "-200%";
+                  })
+                  signOutSad.addEventListener('click', () => {
+                    console.log("signed out")
+                  })}}>
               Sign Out
             </li>
           </ul>
