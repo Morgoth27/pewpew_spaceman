@@ -1,10 +1,6 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "engines": {
-    "node": "16.x",
-    "npm": "^8.5.5"
-  },
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -15,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@apollo/client": "^3.6.0",
     "apollo-server-express": "^3.6.2",
     "bcrypt": "^5.0.1",
     "dotenv": "^16.0.0",
