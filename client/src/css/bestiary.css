@@ -24,7 +24,7 @@
 
 .returnHome {
     font-size: 22px;
-    color: rgb(36, 27, 117);
+    color: rgb(43, 30, 156);
     transition: all 100ms ease-in-out;
     width: 100%;
     text-align: center;
@@ -32,11 +32,11 @@
 
 .returnHome:hover {
     font-size: 24px;
-    color: rgb(55, 38, 201);
+    color: rgb(58, 37, 253);
 }
 
 .returnHome:active {
-    transform: translate(2px);
+    transform: translateY(2px);
 }
 
 .bestiaryPanelHolder {
