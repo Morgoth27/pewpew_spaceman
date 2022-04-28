@@ -20,6 +20,8 @@ const bestiary = () => {
                     <h1 className="bestiaryHeader">Bestiary</h1>
 
                         <div className="bestiaryMessage">Destroy enemies to unlock their sprites!</div>
+
+                        <div className="returnHome clickable" onClick={() => {window.location.assign("/")}}>Home</div>
 				</div>
 
 

@@ -61,7 +61,7 @@ if (!loading) {
 
 				<div className="topPanel">
                     <h1 className="leaderboardHeader">Leaderboards</h1>
-
+                    <div className="returnHome clickable" onClick={() => {window.location.assign("/")}}>Home</div>
 				</div>
 
 

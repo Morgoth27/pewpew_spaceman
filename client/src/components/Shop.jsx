@@ -20,6 +20,7 @@ const shopPage = () => {
             <div className="currencyH1">Currency: </div>
             <div className="currency">0 MM</div>
           </div>
+            <div className="returnHome clickable" onClick={() => {window.location.assign("/")}}>Home</div>
         </div>
 
         <div className="shopPanelHolder">
