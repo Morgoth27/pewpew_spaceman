@@ -24,7 +24,6 @@ app.use(express.json());
 
 
 
-//console.log("server start")
 
 
   app.get('/', (req, res) => {
