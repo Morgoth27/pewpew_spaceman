@@ -35,7 +35,7 @@ import Auth from '../utils/auth';
 
 
 
-//     const CREATEPanel = document.querySelector('.createPanel');
+// const CREATEPanel = document.querySelector('.createPanel');
 // const LOGINPanel = document.querySelector('.loginPanel');
 
 // const swapLOG = document.querySelector('.swapLogBTN');
@@ -187,7 +187,26 @@ import Auth from '../utils/auth';
           <div className="swapLogin">
             <h1 className="alreadyHead">Already have an account?</h1>
 
-            <div className="swapBTN swapLogBTN clickable">Sign In</div>
+            <div className="swapBTN swapLogBTN clickable" onClick={() => {
+              const CREATEPanel = document.querySelector('.createPanel');
+              const LOGINPanel = document.querySelector('.loginPanel');
+
+              const swapLOG = document.querySelector('.swapLogBTN');
+              const swapCREATE = document.querySelector('.swapCreateBTN');
+
+              var createVIS = CREATEPanel.getAttribute('data-visible');
+
+              		if (createVIS === "true") {
+              			CREATEPanel.setAttribute('data-visible', false);
+              			LOGINPanel.setAttribute('data-visible', true);
+              		} else {
+              			CREATEPanel.setAttribute('data-visible', true);
+              			LOGINPanel.setAttribute('data-visible', false);
+              		}
+
+            }}>
+              Sign In
+            </div>
           </div>
         </div>
 
@@ -235,7 +254,24 @@ import Auth from '../utils/auth';
           <div className="swapLogin">
             <h1 className="alreadyHead">Don't have an account?</h1>
 
-            <div className="swapBTN swapCreateBTN clickable">
+            <div className="swapBTN swapCreateBTN clickable" onClick={() => {
+              const CREATEPanel = document.querySelector('.createPanel');
+              const LOGINPanel = document.querySelector('.loginPanel');
+
+              const swapLOG = document.querySelector('.swapLogBTN');
+              const swapCREATE = document.querySelector('.swapCreateBTN');
+
+              var createVIS = CREATEPanel.getAttribute('data-visible');
+
+              		if (createVIS === "true") {
+              			CREATEPanel.setAttribute('data-visible', false);
+              			LOGINPanel.setAttribute('data-visible', true);
+              		} else {
+              			CREATEPanel.setAttribute('data-visible', true);
+              			LOGINPanel.setAttribute('data-visible', false);
+              		}
+
+            }}>
               Create Account
             </div>
           </div>

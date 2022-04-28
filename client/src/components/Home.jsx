@@ -116,7 +116,7 @@ const homePage = () => {
 
               <h2 className="spacemanSad">Spaceman will miss you!</h2>
 
-              <div className="stay clickable">Stay</div>
+              <div className="stay clickable" onClick={() => {const signOutConfirm = document.querySelector(".holderHolder");signOutConfirm.style.transform = "scale(0)";signOutConfirm.style.marginRight = "-200%";}}>Stay</div>
               <div className="signOutSad clickable" onClick={() => {localStorage.removeItem("id_token")}}><Link to={`/login`}>Sign Out</Link></div>
             </div>
           </div>
@@ -140,25 +140,11 @@ const homePage = () => {
               Options
             </li>
 
-            <li className="menuBTN util signOut clickable" onClick={() => {  const signOutConfirm = document.querySelector(".holderHolder");
-
-                const stay = document.querySelector('.stay');
-                const signOutSad = document.querySelector('.signOutSad');
-
-                const signOut = document.querySelector('.signOut');
-
-
-                  signOut.addEventListener('click', () => {
-                    signOutConfirm.style.transform = "scale(1)";
-                    signOutConfirm.style.marginRight = "0";
-                  })
-                  stay.addEventListener('click', () => {
-                    signOutConfirm.style.transform = "scale(0)";
-                    signOutConfirm.style.marginRight = "-200%";
-                  })
-                  signOutSad.addEventListener('click', () => {
-                    console.log("signed out")
-                  })}}>
+            <li className="menuBTN util signOut clickable" onClick={() => {  
+              const signOutConfirm = document.querySelector(".holderHolder");
+              signOutConfirm.style.transform = "scale(1)";
+              signOutConfirm.style.marginRight = "0";
+            }}>
               Sign Out
             </li>
           </ul>
