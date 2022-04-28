@@ -8,7 +8,7 @@
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build"
+    "build": "cd client && ls -la node_modules/ && ls -la node_modules/clean-webpack-plugin/dist && npm run build"
   },
   "author": "",
   "license": "ISC",
