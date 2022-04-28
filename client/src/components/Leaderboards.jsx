@@ -9,7 +9,6 @@ import { LEADERBOARD_QUERY } from "../utils/queries";
 const leaderboardPage = () => {
 
 
-    console.log(document.referrer)
     // window.onload = () => {
     //     window.location.reload();
     // }
@@ -47,7 +46,6 @@ if (!loading) {
             </div>
         );
     })
-    console.log(players)
 } else {
     console.log('loading');
 }

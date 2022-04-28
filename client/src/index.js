@@ -103,7 +103,10 @@ if (clickable) {
 
 
 
-
+const canvas = document.querySelector('canvas');
+if (canvas) {
+  canvas.remove()
+}
 
 
 ReactDOM.render(
