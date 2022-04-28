@@ -13,13 +13,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.3.0",
-    "webpack-cli": "^4.9.2"
-  },
-  "dependencies": {
-    "@apollo/client": "^3.6.0",
-    "dotenv": "^16.0.0",
-    "graphql": "^16.4.0",
-    "node": "^17.7.2"
+    "concurrently": "^5.3.0"
   }
 }
