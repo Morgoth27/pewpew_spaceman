@@ -1,10 +1,6 @@
 {
   "name": "pew-pew-spaceman",
   "version": "1.0.0",
-  "engines": {
-    "node": "16.x",
-    "npm": "^8.5.5"
-  },
   "description": "pew",
   "main": "server/server.js",
   "scripts": {
@@ -21,6 +17,7 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.0",
     "dotenv": "^16.0.0",
     "graphql": "^16.4.0",
     "node": "^17.7.2"
