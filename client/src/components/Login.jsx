@@ -149,6 +149,7 @@ import Auth from '../utils/auth';
                   type="text"
                   className="userName input clickable"
                   required
+                  placeholder="Between 4-14 characters."
                 ></input>
               </div>
 
@@ -175,6 +176,7 @@ import Auth from '../utils/auth';
                   type="password"
                   className="userPassword input clickable"
                   required
+                  placeholder="Between 8-14 characters."
                 ></input>
               </div>
 
@@ -229,6 +231,7 @@ import Auth from '../utils/auth';
                   type="text"
                   className="userName input clickable"
                   required
+                  placeholder="Between 4-14 characters."
                 ></input>
               </div>
 
@@ -242,6 +245,7 @@ import Auth from '../utils/auth';
                   type="password"
                   className="userPassword input clickable"
                   required
+                  placeholder="Between 8-14 characters."
                 ></input>
               </div>
 

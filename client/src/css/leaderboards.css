@@ -79,6 +79,7 @@
 
 .scoreRowPiece {
     margin: 5px;
+    white-space: nowrap;
 }
 
 .MID {

@@ -7,6 +7,12 @@ import { LEADERBOARD_QUERY } from "../utils/queries";
 
 
 const leaderboardPage = () => {
+
+
+    console.log(document.referrer)
+    // window.onload = () => {
+    //     window.location.reload();
+    // }
     
     
     const {loading, data}  = useQuery(LEADERBOARD_QUERY);

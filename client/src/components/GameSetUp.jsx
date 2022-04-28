@@ -1695,9 +1695,7 @@ const gameHTML = () => {
                     <form className="submitScoreForm" data-visible="true">
                       <button type="submit" className="clickable" id="submitScore" onClick={() => {
                         onSubmit;
-                        window.location.assign('/leaderboards')
-                        
-                      }}>Submit Score</button>
+                      }}><Link to={`/leaderboards`}>Submit Score</Link></button>
                     </form> 
                     <div className="retryOrHome">
                       <div className="returnHome clickable">
