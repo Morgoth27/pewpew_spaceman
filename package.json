@@ -1,6 +1,10 @@
 {
   "name": "pew-pew-spaceman",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.x",
+    "npm": "^8.5.5"
+  },
   "description": "pew",
   "main": "server/server.js",
   "scripts": {
