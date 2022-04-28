@@ -1,8 +1,6 @@
 
 # PewPew Spaceman
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
 
 ## Table of Contents
 
@@ -94,7 +92,7 @@ npm i
 ## About the Authors
 ------------------
 
-(C) TOAD KING 2022
+TOAD KING Team
 
 In alphabetical order by surname.
 
@@ -116,3 +114,4 @@ In alphabetical order by surname.
 ## License
 ----------
 * [License](#license)
+(C) TOAD KING 2022
