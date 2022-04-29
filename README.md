@@ -18,7 +18,13 @@
 
 **PewPew Spaceman**
 
-A CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well.  
+Public Link: https://pewpewpewpew-spaceman.herokuapp.com/
+
+<img width="1764" alt="Screen Shot 2022-04-28 at 11 27 42 PM" src="https://user-images.githubusercontent.com/43100954/165895478-6d8a860c-7b61-45b1-ac63-582f4f3920bf.png">
+<img width="1779" alt="Screen Shot 2022-04-28 at 11 28 38 PM" src="https://user-images.githubusercontent.com/43100954/165895494-f1c262de-cec1-4973-a729-8ad26736d01c.png">
+<img width="1779" alt="Screen Shot 2022-04-28 at 11 28 56 PM" src="https://user-images.githubusercontent.com/43100954/165895511-0d281d02-edfa-480c-b78b-08150b7fbf82.png">
+<img width="1783" alt="Screen Shot 2022-04-28 at 11 31 58 PM" src="https://user-images.githubusercontent.com/43100954/165895523-da9005a8-f13f-41a9-a967-d02fd07d5869.png">
+
 
 
 ## User Story
